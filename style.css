@@ -1,0 +1,327 @@
+:root {
+  --siteShade1: hsl(223, 33%, 4%);
+  --siteShade2: hsl(332, 100%, 24%);
+  --siteShade3: hsl(332, 100%, 40%);
+  --siteShade4: hsl(35, 9%, 49%);
+  --siteShade5: hsl(36, 21%, 71%);
+  --siteTint1: hsl(0, 0%, 90%);
+  --siteNavigationFontSize: 1.6rem;
+  --siteInformationFontSize: 1.3rem;
+}
+
+body {
+  background-color: var(--siteShade1);
+  padding: 0 30rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Ubuntu Mono", monospace;
+  text-align: center;
+  transition: padding 500ms;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background-color: var(--siteShade3);
+}
+
+::selection {
+  background-color: var(--siteShade3);
+}
+
+::-webkit-scrollbar {
+  width: 0.4375rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--siteShade2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--siteShade3);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--siteTint1);
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  background-color: var(--siteShade1);
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 1;
+}
+.navigation-container .navigation-title {
+  color: var(--siteTint1);
+  font-size: var(--siteNavigationFontSize);
+  cursor: pointer;
+}
+.navigation-container .navigation-button-spacer {
+  display: flex;
+  gap: 1rem;
+}
+.navigation-container .navigation-button-spacer .navigation-button {
+  color: var(--siteTint1);
+  font-size: var(--siteNavigationFontSize);
+  cursor: pointer;
+  transition: all 500ms;
+}
+.navigation-container .navigation-button-spacer .navigation-button:hover {
+  color: var(--siteShade3);
+  transition: all 200ms;
+}
+
+.information-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  background-color: var(--siteShade1);
+}
+.information-container .information-button-spacer {
+  display: flex;
+  gap: 1rem;
+}
+.information-container .information-button-spacer .information-button {
+  color: var(--siteTint1);
+  font-size: var(--siteInformationFontSize);
+  cursor: pointer;
+  transition: all 500ms;
+  text-decoration: none;
+}
+.information-container .information-button-spacer .information-button:hover {
+  color: var(--siteShade3);
+  transition: all 200ms;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+.section-container .first-paragraph {
+  color: var(--siteTint1);
+  font-size: 1.4rem;
+}
+.section-container .first-paragraph .highlighted-red-word {
+  color: var(--siteShade3);
+  text-shadow: 0 0 1rem;
+}
+.section-container .first-paragraph .highlighted-gold-word {
+  color: var(--siteShade5);
+  text-shadow: 0 0 1rem;
+}
+.section-container .second-paragraph {
+  color: var(--siteTint1);
+  filter: opacity(0.8);
+}
+.section-container .third-paragraph {
+  color: var(--siteTint1);
+  filter: opacity(0.6);
+}
+.section-container .display-paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--siteTint1);
+  gap: 0.5rem;
+}
+.section-container .display-paragraph .color-circle {
+  height: 0.625rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  outline: 0.125rem solid #303030;
+}
+.section-container .code-display {
+  color: var(--siteTint1);
+  text-align: left;
+}
+.section-container .clock {
+  font-size: 2em;
+  color: var(--siteShade3);
+  text-shadow: 0 0 1rem;
+  animation: pulse 1s infinite;
+}
+.section-container .iframe-resize {
+  width: 100%;
+  height: 31.25rem;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.section-container .credits {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 2rem;
+  background-color: var(--siteShade2);
+  color: var(--siteTint1);
+  border: 0.125rem solid var(--siteShade3);
+  display: grid;
+  place-content: center;
+  z-index: 2;
+}
+.section-container .io-game-red {
+  color: var(--siteTint1);
+  font-size: 1.5rem;
+  -webkit-text-stroke-width: 0.0313rem;
+  -webkit-text-stroke-color: var(--siteShade3);
+  text-shadow: 0 0 1rem var(--siteShade3);
+}
+.section-container .io-game-gold {
+  color: var(--siteTint1);
+  font-size: 1.5rem;
+  -webkit-text-stroke-width: 0.0313rem;
+  -webkit-text-stroke-color: var(--siteShade5);
+  text-shadow: 0 0 1rem var(--siteShade5);
+}
+
+.disabled {
+  filter: opacity(0.6) blur(0.0625rem);
+  pointer-events: none;
+}
+
+.notification-container {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.1875rem;
+}
+
+.notification {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.5rem 2rem;
+  background-color: var(--siteShade2);
+  color: var(--siteTint1);
+  border: 0.125rem solid var(--siteShade3);
+  z-index: 3;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.button-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-auto-rows: 4rem;
+  grid-gap: 0.625rem;
+}
+.button-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--siteTint1);
+  border-radius: 4rem;
+  font-family: "Ubuntu Mono", monospace;
+  background-color: var(--siteShade2);
+  border: 0.125rem solid var(--siteShade3);
+  transition: all 500ms;
+  box-shadow: 0 0 2rem 0 hsla(335, 95%, 38%, 0.6);
+  cursor: pointer;
+}
+.button-container .button:hover {
+  transition: all 200ms;
+  background-color: var(--siteShade3);
+  transform: translateY(-0.3125rem);
+}
+.button-container .button-premium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--siteTint1);
+  border-radius: 4rem;
+  font-family: "Ubuntu Mono", monospace;
+  background-color: var(--siteShade4);
+  border: 0.125rem solid var(--siteShade5);
+  transition: all 500ms;
+  box-shadow: 0 0 2rem 0 hsla(36, 46%, 84%, 0.6);
+  cursor: pointer;
+}
+.button-container .button-premium::after {
+  content: "Demonsong client";
+}
+.button-container .button-premium:hover::after {
+  animation-name: fade-in;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    content: "Premium script";
+  }
+  100% {
+    opacity: 1;
+    content: "Premium script";
+  }
+}
+.button-container .button-premium:hover {
+  transition: all 200ms;
+  background-color: var(--siteShade5);
+  transform: translateY(-0.3125rem);
+}
+
+@media (max-width: 106.25rem) {
+  body {
+    padding: 0 25rem;
+  }
+}
+@media (max-width: 87.5rem) {
+  body {
+    padding: 0 20rem;
+  }
+}
+@media (max-width: 68.75rem) {
+  body {
+    padding: 0 15rem;
+  }
+}
+@media (max-width: 59.375rem) {
+  body {
+    padding: 0 10rem;
+  }
+}
+@media (max-width: 40.625rem) {
+  body {
+    padding: 0;
+  }
+}
+@media (max-width: 18.75rem) {
+  .navigation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navigation-container .navigation-title {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
