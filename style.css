@@ -125,6 +125,11 @@ body {
   color: var(--siteTint1);
   filter: opacity(0.8);
 }
+.section-container .second-paragraph a {
+  color: var(--siteTint1);
+  filter: opacity(0.8);
+  text-decoration: none;
+}
 .section-container .third-paragraph {
   color: var(--siteTint1);
   filter: opacity(0.6);
@@ -203,10 +208,12 @@ body {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
+  background-color: var(--siteShade1);
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.1875rem;
+  gap: 2px;
+  z-index: 3;
 }
 
 .notification {
@@ -216,7 +223,6 @@ body {
   background-color: var(--siteShade2);
   color: var(--siteTint1);
   border: 0.125rem solid var(--siteShade3);
-  z-index: 3;
   transition: opacity 0.5s ease-in-out;
 }
 
