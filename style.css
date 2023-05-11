@@ -208,11 +208,10 @@ body {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--siteShade1);
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2px;
+  gap: 0.125rem;
   z-index: 3;
 }
 
@@ -220,6 +219,7 @@ body {
   width: -moz-max-content;
   width: max-content;
   padding: 0.5rem 2rem;
+  box-shadow: 0 0 0 0.0625rem var(--siteShade1);
   background-color: var(--siteShade2);
   color: var(--siteTint1);
   border: 0.125rem solid var(--siteShade3);
