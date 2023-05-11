@@ -113,13 +113,13 @@ body {
   color: var(--siteTint1);
   font-size: 1.4rem;
 }
-.section-container .first-paragraph .highlighted-red-word {
+.section-container .highlighted-red-word {
   color: var(--siteShade3);
-  text-shadow: 0 0 1rem;
+  text-shadow: 0 0 0.5rem;
 }
-.section-container .first-paragraph .highlighted-gold-word {
+.section-container .highlighted-gold-word {
   color: var(--siteShade5);
-  text-shadow: 0 0 1rem;
+  text-shadow: 0 0 0.5rem;
 }
 .section-container .second-paragraph {
   color: var(--siteTint1);
@@ -151,10 +151,16 @@ body {
   color: var(--siteTint1);
   text-align: left;
 }
-.section-container .clock {
-  font-size: 2em;
+.section-container .fps-counter,
+.section-container #ping-counter {
+  font-size: 1.5em;
   color: var(--siteShade3);
-  text-shadow: 0 0 1rem;
+  text-shadow: 0 0 0.5rem;
+}
+.section-container .clock {
+  font-size: 1.9em;
+  color: var(--siteShade3);
+  text-shadow: 0 0 0.5rem;
   animation: pulse 1s infinite;
 }
 .section-container .iframe-resize {
@@ -188,14 +194,14 @@ body {
   font-size: 1.5rem;
   -webkit-text-stroke-width: 0.0313rem;
   -webkit-text-stroke-color: var(--siteShade3);
-  text-shadow: 0 0 1rem var(--siteShade3);
+  text-shadow: 0 0 0.5rem var(--siteShade3);
 }
 .section-container .io-game-gold {
   color: var(--siteTint1);
   font-size: 1.5rem;
   -webkit-text-stroke-width: 0.0313rem;
   -webkit-text-stroke-color: var(--siteShade5);
-  text-shadow: 0 0 1rem var(--siteShade5);
+  text-shadow: 0 0 0.5rem var(--siteShade5);
 }
 
 .disabled {
