@@ -46,12 +46,44 @@
 				let hours = now.getHours();
 				const minutes = ("0" + now.getMinutes()).slice(-2);
 				const seconds = ("0" + now.getSeconds()).slice(-2);
+				const milliseconds = ("00" + now.getMilliseconds()).slice(-3);
 				const meridiem = hours >= 12 ? "PM" : "AM";
 				hours = (hours % 12 || 12).toString().padStart(2, "0");
-				const timeString = hours + ":" + minutes + ":" + seconds + " " + meridiem;
-				$(".clock").text(timeString);
+				const timeString = hours + ":" + minutes + ":" + seconds + "." + milliseconds + " " + meridiem;
+				const clockElement = $(".clock");
+				clockElement.text(timeString);
+				requestAnimationFrame(updateClock);
 			}
-			setInterval(updateClock, 1000);
+			requestAnimationFrame(updateClock);
+			let frames = 0;
+			let startTime = performance.now();
+			function updateFPSCounter() {
+				frames++;
+				const currentTime = performance.now();
+				const elapsedSeconds = (currentTime - startTime) / 1000;
+				if (elapsedSeconds >= 1) {
+					const fps = Math.round(frames / elapsedSeconds);
+					$("#fps-value").text(fps);
+					frames = 0;
+					startTime = currentTime;
+				}
+				requestAnimationFrame(updateFPSCounter);
+			}
+			updateFPSCounter();
+			function measurePing() {
+				var startTime = new Date().getTime();
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						var endTime = new Date().getTime();
+						var pingTime = endTime - startTime;
+						document.getElementById("ping-counter").textContent = "Ping: " + pingTime + " ms";
+					}
+				};
+				xhr.open("GET", "https://svitserk-morningstar.github.io", true);
+				xhr.send();
+			}
+			setInterval(measurePing, 1000);
 		</script>
 	</head>
 	<body>
@@ -78,7 +110,9 @@
 				</div>
 			</nav>
 			<div class="section-container">
-				<div class="clock">00:00:00 **</div>
+				<div class="fps-counter">FPS: <span id="fps-value">*</span></div>
+				<p id="ping-counter">Ping: * ms</p>
+				<div class="clock">00:00:00.000 **</div>
 				<p class="first-paragraph">A website designed to provide individuals with the ability to download <span class="highlighted-red-word">scripts</span> for their preferred io game.</p>
 				<p class="second-paragraph">This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
 				<p class="third-paragraph">Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
@@ -192,7 +226,7 @@
 				</nav>
 			</div>
 			<div class="section-container" id="javascript" style="display: none">
-				<p class="first-paragraph">You may send a message to <span class="highlighted-red-word" style="cursor: pointer" onclick="createNotification('Urban Dubov#6822')">Urban Dubov#6822</span> if you possess a script that you wish for Urban to share.</p>
+				<p class="first-paragraph">You may send a message to <span class="highlighted-red-word" style="cursor: pointer" onclick="createNotification('Urban Dubov#3151')">Urban Dubov#3151</span> if you possess a script that you wish for Urban to share.</p>
 				<p class="second-paragraph">To ensure the safety of the community, we will not accept any obfuscated scripts.</p>
 				<p class="third-paragraph">As always, due credit will be given.</p>
 				<nav class="information-container">
@@ -210,8 +244,8 @@
 				</nav>
 			</div>
 			<div class="section-container" id="premium" style="display: none">
-				<p class="first-paragraph">Please explore the premium <span class="highlighted-gold-word">scripts</span> available in this tab to discover the exceptional benefits you can derive from these offers.</p>
-				<p class="second-paragraph">
+				<p class="first-paragraph">Please explore the <span class="highlighted-gold-word">premium scripts</span> available in this tab to discover the exceptional benefits you can derive from these offers.</p>
+				<p class="second-paragraph highlighted-gold-word">
 					Feel free to click
 					<span class="navigation-button" onclick="tab('javascript')" style="cursor: pointer">
 						<i class="ri-javascript-line"></i>
