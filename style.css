@@ -242,8 +242,8 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  grid-auto-rows: 4rem;
-  grid-gap: 0.625rem;
+  grid-auto-rows: 3rem;
+  grid-gap: 0.9375rem;
 }
 .button-container .button {
   display: flex;
@@ -256,7 +256,7 @@ body {
   background-color: var(--siteShade2);
   border: 0.125rem solid var(--siteShade3);
   transition: all 500ms;
-  box-shadow: 0 0 2rem 0 hsla(335, 95%, 38%, 0.6);
+  box-shadow: 0 0 1rem 0 hsla(335, 95%, 38%, 0.6);
   cursor: pointer;
 }
 .button-container .button:hover {
@@ -275,7 +275,7 @@ body {
   background-color: var(--siteShade4);
   border: 0.125rem solid var(--siteShade5);
   transition: all 500ms;
-  box-shadow: 0 0 2rem 0 hsla(36, 46%, 84%, 0.6);
+  box-shadow: 0 0 1rem 0 hsla(36, 46%, 84%, 0.6);
   cursor: pointer;
 }
 .button-container .button-premium::after {
