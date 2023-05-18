@@ -54,7 +54,6 @@ body {
   align-items: center;
   height: 4rem;
   width: 100%;
-  background-color: var(--siteShade1);
   border-radius: 0 0 0.5rem 0.5rem;
   z-index: 1;
 }
@@ -84,7 +83,6 @@ body {
   align-items: center;
   height: 4rem;
   width: 100%;
-  background-color: var(--siteShade1);
 }
 .information-container .information-button-spacer {
   display: flex;
