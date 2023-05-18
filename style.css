@@ -113,17 +113,10 @@ body {
   color: var(--siteTint1);
   font-size: 1.4rem;
 }
-.section-container .highlighted-red-word {
-  color: var(--siteShade3);
-  text-shadow: 0 0 0.5rem;
-}
-.section-container .highlighted-gold-word {
-  color: var(--siteShade5);
-  text-shadow: 0 0 0.5rem;
-}
 .section-container .second-paragraph {
   color: var(--siteTint1);
   filter: opacity(0.8);
+  font-size: 1.2rem;
 }
 .section-container .second-paragraph a {
   color: var(--siteTint1);
@@ -133,6 +126,14 @@ body {
 .section-container .third-paragraph {
   color: var(--siteTint1);
   filter: opacity(0.6);
+}
+.section-container .highlighted-red-word {
+  color: var(--siteShade3);
+  text-shadow: 0 0 0.5rem;
+}
+.section-container .highlighted-gold-word {
+  color: var(--siteShade5);
+  text-shadow: 0 0 0.5rem;
 }
 .section-container .display-paragraph {
   display: flex;
@@ -196,9 +197,21 @@ body {
   -webkit-text-stroke-color: var(--siteShade3);
   text-shadow: 0 0 0.5rem var(--siteShade3);
 }
+.section-container .io-game-red-owner {
+  color: var(--siteTint1);
+  -webkit-text-stroke-width: 0.0313rem;
+  -webkit-text-stroke-color: var(--siteShade3);
+  text-shadow: 0 0 0.5rem var(--siteShade3);
+}
 .section-container .io-game-gold {
   color: var(--siteTint1);
   font-size: 1.5rem;
+  -webkit-text-stroke-width: 0.0313rem;
+  -webkit-text-stroke-color: var(--siteShade5);
+  text-shadow: 0 0 0.5rem var(--siteShade5);
+}
+.section-container .io-game-gold-owner {
+  color: var(--siteTint1);
   -webkit-text-stroke-width: 0.0313rem;
   -webkit-text-stroke-color: var(--siteShade5);
   text-shadow: 0 0 0.5rem var(--siteShade5);
