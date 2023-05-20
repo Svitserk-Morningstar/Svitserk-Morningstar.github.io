@@ -61,6 +61,11 @@ body {
   color: var(--siteTint1);
   font-size: var(--siteNavigationFontSize);
   cursor: pointer;
+  transition: all 500ms;
+}
+.navigation-container .navigation-title:hover {
+  color: var(--siteShade3);
+  transition: all 200ms;
 }
 .navigation-container .navigation-button-spacer {
   display: flex;

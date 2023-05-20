@@ -14,7 +14,7 @@
 		<script>
 			const tab = (specifyTab) => {
 				$(".section-container").hide();
-				var cityElement = $("#" + specifyTab);
+				let cityElement = $("#" + specifyTab);
 				if (cityElement.length > 0) {
 					cityElement.css({ display: "flex", opacity: "0" });
 					setTimeout(() => {
@@ -34,7 +34,7 @@
 				setTimeout(function () {
 					notification.remove();
 				}, 3000);
-				var el = $("<textarea></textarea>");
+				let el = $("<textarea></textarea>");
 				el.val(text);
 				$("body").append(el);
 				el.select();
@@ -71,12 +71,12 @@
 			}
 			updateFPSCounter();
 			function measurePing() {
-				var startTime = new Date().getTime();
-				var xhr = new XMLHttpRequest();
+				let startTime = new Date().getTime();
+				let xhr = new XMLHttpRequest();
 				xhr.onreadystatechange = function () {
 					if (xhr.readyState === 4) {
-						var endTime = new Date().getTime();
-						var pingTime = endTime - startTime;
+						let endTime = new Date().getTime();
+						let pingTime = endTime - startTime;
 						document.getElementById("ping-counter").textContent = "Ping: " + pingTime + " ms";
 					}
 				};
