@@ -70,8 +70,8 @@ function measurePing() {
 	xhr.send();
 }
 setInterval(measurePing, 1000);
-// JavaScript Document
 if (typeof Storage !== "undefined") {
+	localStorage.setItem.visitcount;
 	if (localStorage.visitcount) {
 		document.getElementById("count").innerHTML = localStorage.visitcount;
 		localStorage.visitcount = Number(localStorage.visitcount) + 1;
