@@ -70,7 +70,14 @@ function measurePing() {
 	xhr.send();
 }
 setInterval(measurePing, 1000);
-if (localStorage.visitcount) {
-	document.getElementById("count").innerHTML = localStorage.visitcount;
-	localStorage.visitcount = Number(localStorage.visitcount) + 1;
+// JavaScript Document
+if (typeof Storage !== "undefined") {
+	if (localStorage.visitcount) {
+		document.getElementById("count").innerHTML = localStorage.visitcount;
+		localStorage.visitcount = Number(localStorage.visitcount) + 1;
+	} else {
+		localStorage.visitcount = 1;
+	}
+} else {
+	document.getElementById("count").innerHTML = "error";
 }
