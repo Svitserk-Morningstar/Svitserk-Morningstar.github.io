@@ -214,7 +214,6 @@ select {
   outline: 0.125rem solid var(--shade-1);
   font-family: "Wix Madefor Display", sans-serif;
   background-color: var(--shade-5);
-  border: 0.125rem solid var(--shade-4);
   transition: all 500ms;
   box-shadow: 0 0 0.8125rem 0 var(--shadow-1);
   cursor: pointer;
