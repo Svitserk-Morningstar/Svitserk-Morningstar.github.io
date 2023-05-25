@@ -4,213 +4,150 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet" />
-		<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
-		<link rel="stylesheet" href="style.css" />
-		<title>Scripts</title>
+		<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="script.js" defer></script>
 	</head>
-	<body>
-		<div class="body">
-			<div id="notificationContainer" class="notification-container"></div>
-			<nav class="navigation-container">
-				<header class="navigation-title" onclick="tab('home')">Scripts</header>
-				<div class="navigation-button-spacer">
-					<span class="navigation-button" onclick="tab('home')">
-						<i class="ri-home-smile-line"></i>
-					</span>
-					<span class="navigation-button disabled" onclick="tab('braces')">
-						<i class="ri-braces-line"></i>
-					</span>
-					<span class="navigation-button" onclick="tab('palette')">
-						<i class="ri-palette-line"></i>
-					</span>
-					<span class="navigation-button" onclick="tab('javascript')">
-						<i class="ri-javascript-line"></i>
-					</span>
-					<span class="navigation-button disabled" onclick="tab('premium')">
-						<i class="ri-money-dollar-circle-line"></i>
-					</span>
-				</div>
-			</nav>
-			<div class="section-container">
-				<p class="visit-counter">Visits: <span id="count">*</span></p>
-				<p class="fps-counter">FPS: <span id="fps-value">*</span></p>
-				<p id="ping-counter">Ping: * ms</p>
-				<p class="clock">00:00:00.000 **</p>
-				<p class="first-paragraph">A website designed to provide individuals with the ability to download <span class="highlighted-red-word">scripts</span> for their preferred io game.</p>
-				<p class="second-paragraph">This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
-				<p class="third-paragraph">Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
+	<body onload="incrementCounter()">
+		<div id="notificationContainer" class="notification-container"></div>
+		<nav class="top-bar">
+			<span class="title">Scripts</span>
+			<div class="nav-buttons-container">
+				<span class="nav-buttons active" onclick="changeTab(event, 'home')">
+					<i class="ri-home-smile-fill"></i>
+				</span>
+				<span class="nav-buttons" onclick="changeTab(event, 'codes')">
+					<i class="ri-code-box-fill"></i>
+				</span>
+				<span class="nav-buttons" onclick="changeTab(event, 'palette')">
+					<i class="ri-palette-fill"></i>
+				</span>
+				<span class="nav-buttons" onclick="changeTab(event, 'contact')">
+					<i class="ri-discuss-fill"></i>
+				</span>
+				<span class="nav-buttons" onclick="changeTab(event, 'additional')">
+					<i class="ri-bard-fill"></i>
+				</span>
 			</div>
-			<div class="section-container" id="home" style="display: none">
-				<p class="first-paragraph">Various scripts are shared on this tab to add a touch of excitement to your gaming experience.</p>
-				<p class="second-paragraph">Please be advised that utilizing certain scripts may result in an unjust advantage.</p>
-				<p class="highlighted-red-word">If you intend to utilize my scripts for YouTube videos, kindly provide appropriate credit.</p>
-				<p class="credits">Designed by Urban Dubov</p>
-				<p class="io-game-red">Sploop.io</p>
-				<p class="io-game-red-owner">Urban Dubov</p>
-				<div class="button-container">
-					<a class="button" href="https://cdn.discordapp.com/attachments/1096082093534085232/1100811101597335635/Sploop.io-Auto_disable_grid.txt">Auto disable grids</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/1107037504646946816/1107053691896332480/Sploop.io-Anti_swear.txt">Anti swear</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858922581110784/Sploop.io-Auto_select_server.txt">Auto select server</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1105443318340530286/Sploop.io-Pink_texture_pack.json">Pink texture pack</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106558992546811975/Sploop.io-Jelly_texture_pack.json">Jelly texture pack</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1106949995099324527/Sploop.io-Zoom.txt">Zoom</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106332334963310642/Sploop.io-Custom_biome.txt">Custom biome</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106331455170289684/Sploop.io-Gradient_name.txt">Gradient name</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106333726432034876/Sploop.io-Gradient_health.txt">Gradient health</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106348997423153222/Sploop.io-Game_shadows.txt">Game shadows</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106358557705764945/Sploop.io-Night_mode.txt">Night mode</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106356531366203433/Sploop.io-Ghost_UI.txt">Ghost UI</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106573832606728242/Sploop.io-Limpid_hat_menu.txt">Limpid hat menu</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/1107037504646946816/1107282645882261536/Sploop.io-Limpid_chat_box.txt">Limpid chat box</a>
-					<a class="button disabled">Place macro</a>
-					<a class="button disabled">Hat macro</a>
-					<a class="button-premium disabled" onclick="tab('premium')"></a>
-				</div>
-				<p class="io-game-red-owner">Om07</p>
-				<div class="button-container">
-					<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1108714154451275806/Sploop.io-F1re_texture_pack.json">F1re texture pack</a>
-				</div>
-				<p class="io-game-red">Moomoo.io</p>
-				<p class="io-game-red-owner">Urban Dubov</p>
-				<div class="button-container">
-					<a class="button" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106364786687619132/MooMoo.io-Auto_disable_grid.txt">Auto disable grids</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858674513182814/MooMoo.io-Auto_reload_page.txt">Auto reload page</a>
-					<a class="button" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106365938221187122/Moomoo.io-Night_mode.txt">Night mode</a>
-					<a class="button disabled">Red texture pack</a>
-				</div>
-				<p class="io-game-red">Taming.io</p>
-				<p class="io-game-red-owner">Urban Dubov</p>
-				<div class="button-container">
-					<a class="button disabled">Slime texture pack</a>
-				</div>
-				<nav class="information-container">
-					<div class="information-button-spacer">
-						<a class="information-button" href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank">
-							<i class="ri-youtube-fill"></i>
-						</a>
-						<a class="information-button" href="https://discord.gg/EgApYE5kFc" target="_blank">
-							<i class="ri-discord-fill"></i>
-						</a>
-						<a class="information-button" href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank">
-							<i class="ri-spotify-fill"></i>
-						</a>
-					</div>
-				</nav>
+		</nav>
+		<div class="section-container" id="home">
+			<p class="light-color-show">Ping: <span id="pingCounter">*</span> ms</p>
+			<p class="light-color-show">Fps: <span id="fps-counter">*</span></p>
+			<p class="light-color-show">Visits: <span id="counter">*</span></p>
+			<p class="tab-information-1">
+				A speedy website designed by <span class="random-buttons" onclick="createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span> to provide individuals with the ability to download scripts for their preferred io game.
+			</p>
+			<p class="tab-information-2">This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
+			<p class="tab-information-3">Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
+		</div>
+		<div class="section-container" id="codes" style="display: none">
+			<p class="tab-information-1">Various scripts are shared on this tab to add a touch of excitement to your gaming experience.</p>
+			<p class="tab-information-2">Please be advised that utilizing certain scripts may result in an unjust advantage.</p>
+			<p class="tab-information-3">If you plan to employ these scripts for YouTube videos, please ensure proper attribution is given.</p>
+			<p class="light-color-show">
+				Sploop.io -
+				<select id="Urban-Dubov-sploop-scripts" class="light-color-show">
+					<option value="choose-sploop-Urban-Dubov">Urban Dubov</option>
+					<option value="choose-sploop-Om07">Om07</option>
+				</select>
+				<i class="ri-swap-line"></i>
+			</p>
+			<div class="button-container" id="urbans-container">
+				<a class="button" href="https://cdn.discordapp.com/attachments/1096082093534085232/1100811101597335635/Sploop.io-Auto_disable_grid.txt">Auto disable grids</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/1107037504646946816/1107053691896332480/Sploop.io-Anti_swear.txt">Anti swear</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858922581110784/Sploop.io-Auto_select_server.txt">Auto select server</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1105443318340530286/Sploop.io-Pink_texture_pack.json">Pink texture pack</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106558992546811975/Sploop.io-Jelly_texture_pack.json">Jelly texture pack</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1106949995099324527/Sploop.io-Zoom.txt">Zoom</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106332334963310642/Sploop.io-Custom_biome.txt">Custom biome</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106331455170289684/Sploop.io-Gradient_name.txt">Gradient name</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106333726432034876/Sploop.io-Gradient_health.txt">Gradient health</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106348997423153222/Sploop.io-Game_shadows.txt">Game shadows</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106358557705764945/Sploop.io-Night_mode.txt">Night mode</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106356531366203433/Sploop.io-Ghost_UI.txt">Ghost UI</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1106573832606728242/Sploop.io-Limpid_hat_menu.txt">Limpid hat menu</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/1107037504646946816/1107282645882261536/Sploop.io-Limpid_chat_box.txt">Limpid chat box</a>
+				<a class="button disabled">Place macro</a>
+				<a class="button disabled">Hat macro</a>
 			</div>
-			<div class="section-container" id="braces" style="display: none">
-				<p class="io-game-red">Sploop.io</p>
-				<p class="first-paragraph">Auto disable grids:</p>
-				<nav class="information-container">
-					<div class="information-button-spacer">
-						<a class="information-button" href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank">
-							<i class="ri-youtube-fill"></i>
-						</a>
-						<a class="information-button" href="https://discord.gg/EgApYE5kFc" target="_blank">
-							<i class="ri-discord-fill"></i>
-						</a>
-						<a class="information-button" href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank">
-							<i class="ri-spotify-fill"></i>
-						</a>
-					</div>
-				</nav>
+			<div class="button-container" id="Om07s-container">
+				<a class="button" href="https://cdn.discordapp.com/attachments/945291891207966740/1108714154451275806/Sploop.io-F1re_texture_pack.json">F1re texture pack</a>
 			</div>
-			<div class="section-container" id="palette" style="display: none">
-				<p class="first-paragraph">Discover the captivating array of CSS colors bestowed upon this tab by Urban Dubov. Unleash your creativity and craft something truly remarkable using the vibrant palette offered by this site.</p>
-				<p class="second-paragraph">
-					The following websites have been utilized to provide some graphical assistance:
-					<a href="https://www.shadegenerator.com" target="_blank">
-						<i class="ri-pages-line"></i>
-					</a>
-					and
-					<a href="https://colors.dopely.top/color-toner" target="_blank">
-						<i class="ri-pages-line"></i>
-					</a>
-				</p>
-				<p class="third-paragraph">If developers are seeking attractive color designs, the following hues are recommended.</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(0, 0%, 90%)"></span>Text color:<span style="cursor: pointer" onclick="createNotification('#e6e6e6')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(335, 95%, 38%, 0.6)"></span>Shadow color:<span style="cursor: pointer" onclick="createNotification('#bd055299')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(223, 33%, 4%)"></span>Background color: <span style="cursor: pointer" onclick="createNotification('#07090e')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(332, 100%, 24%)"></span>Normal button color: <span style="cursor: pointer" onclick="createNotification('#7a0039')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(35, 9%, 49%)"></span>Premium button color: <span style="cursor: pointer" onclick="createNotification('#887f72')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(332, 100%, 40%)"></span>Normal button hover color: <span style="cursor: pointer" onclick="createNotification('#cc005f')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<p class="display-paragraph">
-					<span class="color-circle" style="background-color: hsl(36, 21%, 71%)"></span>Premium button hover color: <span style="cursor: pointer" onclick="createNotification('#c4b7a4')"><i class="ri-clipboard-line"></i></span>
-				</p>
-				<nav class="information-container">
-					<div class="information-button-spacer">
-						<a class="information-button" href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank">
-							<i class="ri-youtube-fill"></i>
-						</a>
-						<a class="information-button" href="https://discord.gg/EgApYE5kFc" target="_blank">
-							<i class="ri-discord-fill"></i>
-						</a>
-						<a class="information-button" href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank">
-							<i class="ri-spotify-fill"></i>
-						</a>
-					</div>
-				</nav>
+			<p class="light-color-show">
+				MooMoo.io -
+				<select id="Urban-Dubov-moomoo-scripts" class="light-color-show">
+					<option value="choose-moomoo-Urban-Dubov">Urban Dubov</option>
+				</select>
+				<i class="ri-swap-line"></i>
+			</p>
+			<div class="button-container">
+				<a class="button" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106364786687619132/MooMoo.io-Auto_disable_grid.txt">Auto disable grids</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858674513182814/MooMoo.io-Auto_reload_page.txt">Auto reload page</a>
+				<a class="button" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106365938221187122/Moomoo.io-Night_mode.txt">Night mode</a>
+				<a class="button disabled">Red texture pack</a>
 			</div>
-			<div class="section-container" id="javascript" style="display: none">
-				<p class="first-paragraph">You may send a message to <span class="highlighted-red-word" style="cursor: pointer" onclick="createNotification('Urban Dubov#8571')">Urban Dubov#8571</span> if you possess a script that you wish for Urban to share.</p>
-				<p class="second-paragraph">To ensure the safety of the community, we will not accept any obfuscated scripts.</p>
-				<p class="third-paragraph">As always, due credit will be given.</p>
-				<nav class="information-container">
-					<div class="information-button-spacer">
-						<a class="information-button" href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank">
-							<i class="ri-youtube-fill"></i>
-						</a>
-						<a class="information-button" href="https://discord.gg/EgApYE5kFc" target="_blank">
-							<i class="ri-discord-fill"></i>
-						</a>
-						<a class="information-button" href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank">
-							<i class="ri-spotify-fill"></i>
-						</a>
-					</div>
-				</nav>
-			</div>
-			<div class="section-container" id="premium" style="display: none">
-				<p class="first-paragraph">Please explore the <span class="highlighted-gold-word">premium scripts</span> available in this tab to discover the exceptional benefits you can derive from these offers.</p>
-				<p class="second-paragraph highlighted-gold-word">
-					Feel free to click
-					<span class="navigation-button" onclick="tab('javascript')" style="cursor: pointer">
-						<i class="ri-javascript-line"></i>
-					</span>
-					if you wish to get in touch with the owner and make a purchase.
-				</p>
-				<p class="third-paragraph">Kindly note that these scripts will be furnished with vital features to guarantee adherence to gaming regulations.</p>
-				<p class="io-game-gold">Sploop.io</p>
-				<iframe class="iframe-resize" src="https://www.youtube.com/embed/baT0KXeXrZk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<nav class="information-container">
-					<div class="information-button-spacer">
-						<a class="information-button" href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank">
-							<i class="ri-youtube-fill"></i>
-						</a>
-						<a class="information-button" href="https://discord.gg/EgApYE5kFc" target="_blank">
-							<i class="ri-discord-fill"></i>
-						</a>
-						<a class="information-button" href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank">
-							<i class="ri-spotify-fill"></i>
-						</a>
-					</div>
-				</nav>
+			<p class="light-color-show">
+				Taming.io -
+				<select id="Urban-Dubov-taming-scripts" class="light-color-show">
+					<option value="choose-taming-Urban-Dubov">Urban Dubov</option>
+				</select>
+				<i class="ri-swap-line"></i>
+			</p>
+			<div class="button-container">
+				<a class="button disabled">Slime texture pack</a>
 			</div>
 		</div>
-		<script src="script.js"></script>
+		<div class="section-container" id="palette" style="display: none">
+			<p class="tab-information-1">The colors used by this website are shared on this tab for development purposes.</p>
+			<p class="tab-information-2">
+				The following websites have been utilized to provide some graphical assistance:
+				<a href="https://www.shadegenerator.com" target="_blank" class="random-buttons">
+					<i class="ri-pages-line"></i>
+				</a>
+				and
+				<a href="https://colors.dopely.top/color-toner" target="_blank" class="random-buttons">
+					<i class="ri-pages-line"></i>
+				</a>
+			</p>
+			<p class="tab-information-3">If developers are seeking attractive color designs, the following hues are recommended.</p>
+			<p class="light-color-show">The color scheme utilized on my website</p>
+			<div class="button-container">
+				<a class="button" onclick="createNotification('#0b130f')">Website background</a>
+				<a class="button" onclick="createNotification('#040b05')">Button background</a>
+				<a class="button" onclick="createNotification('#a27e49')">Text color</a>
+				<a class="button" onclick="createNotification('#897961')">Light text color</a>
+				<a class="button" onclick="createNotification('#a27e4999')">Shadow color</a>
+			</div>
+		</div>
+		<div class="section-container" id="contact" style="display: none">
+			<p class="tab-information-1">
+				You may send a message to <span class="random-buttons" onclick="createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span>
+				if you possess a script that you wish for Urban to share.
+			</p>
+			<p class="tab-information-2">To ensure the safety of the community, we will not accept any obfuscated scripts.</p>
+			<p class="tab-information-3">As always, due credit will be given.</p>
+		</div>
+		<div class="section-container" id="additional" style="display: none">
+			<p class="tab-information-1">It is essential to acknowledge that you are significant. No individual should endure feelings of sadness and unhappiness. Life can be challenging, and we all encounter difficult moments.</p>
+			<p class="tab-information-2">Urban Dubov possesses a genuine passion for assisting others and possesses a magnanimous nature. His aspirations revolve around making a positive impact within the community and effecting meaningful change.</p>
+			<p class="tab-information-3">Consider this message as an acknowledgment that Urban Dubov is someone you can confide in if you find yourself navigating through challenging circumstances. It is beneficial to express the thoughts and emotions burdening your heart, as they may be inhibiting your progress and confining you.</p>
+		</div>
+		<nav class="bottom-bar">
+			<div class="nav-buttons-container">
+				<a href="https://discord.gg/EgApYE5kFc" class="nav-buttons">
+					<i class="ri-discord-fill"></i>
+				</a>
+				<a href="https://www.youtube.com/@Svitserk-Morningstar" class="nav-buttons">
+					<i class="ri-youtube-fill"></i>
+				</a>
+				<a href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" class="nav-buttons">
+					<i class="ri-spotify-fill"></i>
+				</a>
+			</div>
+		</nav>
 	</body>
 </html>
