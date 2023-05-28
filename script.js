@@ -122,7 +122,11 @@ function showRemaining() {
 
 	if (distance < 0) {
 		clearInterval(timer);
-		document.getElementById("countdown").innerHTML = "Script released.";
+		document.getElementById("countdown").innerHTML = `
+		Script released, check out
+		<span class="random-buttons" onclick="changeTab(event, 'codes')">
+			<i class="ri-code-box-fill"></i>
+		</span>`;
 		return;
 	}
 
