@@ -88,19 +88,51 @@ function createNotification(text) {
 	el.remove();
 }
 
-let selectElement = document.getElementById("Urban-Dubov-sploop-scripts");
-let urbanContainer = document.getElementById("urbans-container");
-let om07Container = document.getElementById("Om07s-container");
+const selectElement = document.getElementById("Urban-Dubov-sploop-scripts");
+const urbanContainer = document.getElementById("urbans-container");
+const om07Container = document.getElementById("Om07s-container");
+const hideStyle = "none";
+const gridStyle = "grid";
 
 selectElement.addEventListener("change", function () {
-	switch (selectElement.value) {
+	const value = selectElement.value;
+
+	switch (value) {
 		case "choose-sploop-Om07":
-			urbanContainer.style.display = "none";
-			om07Container.style.display = "grid";
+			urbanContainer.style.display = hideStyle;
+			om07Container.style.display = gridStyle;
 			break;
 		case "choose-sploop-Urban-Dubov":
-			urbanContainer.style.display = "grid";
-			om07Container.style.display = "none";
+			urbanContainer.style.display = gridStyle;
+			om07Container.style.display = hideStyle;
 			break;
 	}
 });
+
+const end = new Date("05/30/2023 7:00 PM");
+const _second = 1000;
+const _minute = _second * 60;
+const _hour = _minute * 60;
+const _day = _hour * 24;
+let timer;
+
+function showRemaining() {
+	const now = new Date();
+	const distance = end - now;
+
+	if (distance < 0) {
+		clearInterval(timer);
+		document.getElementById("countdown").innerHTML = "Script released.";
+		return;
+	}
+
+	const days = Math.floor(distance / _day);
+	const hours = Math.floor((distance % _day) / _hour);
+	const minutes = Math.floor((distance % _hour) / _minute);
+	const seconds = Math.floor((distance % _minute) / _second);
+
+	const countdownString = days + " days, " + hours + " hrs, " + minutes + " mins, " + seconds + " secs";
+	document.getElementById("countdown").innerHTML = countdownString;
+}
+
+timer = setInterval(showRemaining, 1000);
