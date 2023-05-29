@@ -91,6 +91,7 @@ function createNotification(text) {
 const selectElement = document.getElementById("Urban-Dubov-sploop-scripts");
 const urbanContainer = document.getElementById("urbans-container");
 const om07Container = document.getElementById("Om07s-container");
+const dercoContainer = document.getElementById("Derco-container");
 const hideStyle = "none";
 const gridStyle = "grid";
 
@@ -101,10 +102,17 @@ selectElement.addEventListener("change", function () {
 		case "choose-sploop-Om07":
 			urbanContainer.style.display = hideStyle;
 			om07Container.style.display = gridStyle;
+			dercoContainer.style.display = hideStyle;
 			break;
 		case "choose-sploop-Urban-Dubov":
 			urbanContainer.style.display = gridStyle;
 			om07Container.style.display = hideStyle;
+			dercoContainer.style.display = hideStyle;
+			break;
+		case "choose-sploop-Derco":
+			urbanContainer.style.display = hideStyle;
+			om07Container.style.display = hideStyle;
+			dercoContainer.style.display = gridStyle;
 			break;
 	}
 });
