@@ -117,7 +117,7 @@ selectElement.addEventListener("change", function () {
 	}
 });
 
-const end = new Date("05/30/2023 7:00 PM");
+const endUTC = Date.UTC(2023, 4, 30, 7);
 const _second = 1000;
 const _minute = _second * 60;
 const _hour = _minute * 60;
@@ -126,7 +126,9 @@ let timer;
 
 function showRemaining() {
 	const now = new Date();
-	const distance = end - now;
+	const nowUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+	const distance = endUTC - nowUTC;
 
 	if (distance < 0) {
 		clearInterval(timer);
