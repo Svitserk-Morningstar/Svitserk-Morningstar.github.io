@@ -117,7 +117,7 @@ selectElement.addEventListener("change", function () {
 	}
 });
 
-const endUTC = Date.UTC(2023, 4, 30, 7);
+const endUTC = Date.UTC(2023, 5, 2, 7);
 const _second = 1000;
 const _minute = _second * 60;
 const _hour = _minute * 60;
