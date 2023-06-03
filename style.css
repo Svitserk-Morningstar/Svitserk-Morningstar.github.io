@@ -192,6 +192,33 @@ select {
   filter: opacity(0.6);
 }
 
+.tab-information-animated {
+  font-size: 0.9em;
+  font-weight: bold;
+  animation: animated-text 10s alternate infinite;
+  filter: opacity(0.6);
+}
+
+@keyframes animated-text {
+  0% {
+    color: #2bc0e4;
+  }
+  20% {
+    color: #eaecc6;
+  }
+  40% {
+    color: #4776e6;
+  }
+  60% {
+    color: #8e54e9;
+  }
+  80% {
+    color: #ff8008;
+  }
+  100% {
+    color: #ffc837;
+  }
+}
 .section-container {
   display: flex;
   flex-direction: column;
