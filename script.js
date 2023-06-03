@@ -109,6 +109,8 @@ const gridStyle = "grid";
 selectElement.addEventListener("change", function () {
 	const value = selectElement.value;
 	const changeSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3");
+	changeSound.volume = 0.6;
+	changeSound.play();
 
 	switch (value) {
 		case "choose-sploop-Om07":
@@ -127,11 +129,9 @@ selectElement.addEventListener("change", function () {
 			dercoContainer.style.display = gridStyle;
 			break;
 	}
-	changeSound.volume = 0.6;
-	changeSound.play();
 });
 
-const endUTC = Date.UTC(2023, 5, 2, 7);
+const endUTC = Date.UTC(2023, 5, 8, 19);
 const _second = 1000;
 const _minute = _second * 60;
 const _hour = _minute * 60;
@@ -147,10 +147,11 @@ function showRemaining() {
 	if (distance < 0) {
 		clearInterval(timer);
 		document.getElementById("countdown").innerHTML = `
-		Script released, check out
+		released, check out
 		<span class="random-buttons" onclick="changeTab(event, 'codes')">
 			<i class="ri-code-box-fill"></i>
-		</span>`;
+		</span>
+		`;
 		return;
 	}
 
