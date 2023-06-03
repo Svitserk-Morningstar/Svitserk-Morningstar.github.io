@@ -71,9 +71,7 @@ class Functions {
 
 		this.selectElement.addEventListener("change", () => {
 			const value = this.selectElement.value;
-			const changeSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3");
-			changeSound.volume = 0.6;
-			changeSound.play();
+			this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
 			switch (value) {
 				case "choose-sploop-Om07":
