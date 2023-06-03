@@ -107,7 +107,12 @@ body {
   background-color: var(--shade-5);
   outline: 0.125rem solid var(--shade-1);
   color: var(--shade-3);
-  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fade-in {
+  opacity: 1 !important;
 }
 
 .fade-out {
@@ -159,6 +164,7 @@ select {
 
 .nav-buttons.active {
   filter: opacity(1);
+  pointer-events: none;
 }
 
 .light-color-show {

@@ -54,6 +54,7 @@ function incrementCounter() {
 
 function changeTab(evt, name) {
 	let i, sectionContainer, navButtons;
+	const changeSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3");
 	sectionContainer = document.getElementsByClassName("section-container");
 	for (i = 0; i < sectionContainer.length; i++) {
 		sectionContainer[i].style.display = "none";
@@ -63,6 +64,8 @@ function changeTab(evt, name) {
 		navButtons[i].classList.remove("active");
 		navButtons[i].classList.add("inactive");
 	}
+	changeSound.volume = 0.6;
+	changeSound.play();
 	document.getElementById(name).style.display = "flex";
 	evt.currentTarget.classList.remove("inactive");
 	evt.currentTarget.classList.add("active");
@@ -70,16 +73,24 @@ function changeTab(evt, name) {
 
 function createNotification(text) {
 	const container = $("#notificationContainer");
+	const notificationSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114342145655066665/soundscrate-graphics-soft-pluck-confirmation.mp3");
 	const notification = $("<div>")
-		.addClass("notification")
+		.addClass("notification fade-out")
 		.text("Copied " + text);
 	container.prepend(notification);
+	notificationSound.play();
+	notification[0].offsetHeight;
+	notification.removeClass("fade-out");
+	notification.addClass("fade-in");
+
 	setTimeout(function () {
+		notification.removeClass("fade-in");
 		notification.addClass("fade-out");
-	}, 2500);
+	}, 2000);
 	setTimeout(function () {
 		notification.remove();
-	}, 3000);
+	}, 2300);
+
 	let el = $("<textarea></textarea>");
 	el.val(text);
 	$("body").append(el);
@@ -97,6 +108,7 @@ const gridStyle = "grid";
 
 selectElement.addEventListener("change", function () {
 	const value = selectElement.value;
+	const changeSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3");
 
 	switch (value) {
 		case "choose-sploop-Om07":
@@ -115,6 +127,8 @@ selectElement.addEventListener("change", function () {
 			dercoContainer.style.display = gridStyle;
 			break;
 	}
+	changeSound.volume = 0.6;
+	changeSound.play();
 });
 
 const endUTC = Date.UTC(2023, 5, 2, 7);
