@@ -69,7 +69,28 @@ function changeTab(evt, name) {
 	document.getElementById(name).style.display = "flex";
 	evt.currentTarget.classList.remove("inactive");
 	evt.currentTarget.classList.add("active");
+
+	localStorage.setItem("activeSection", name);
+	for (i = 0; i < navButtons.length; i++) {
+		if (navButtons[i] === evt.currentTarget) {
+			localStorage.setItem("activeButton", i);
+			break;
+		}
+	}
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+	const activeSection = localStorage.getItem("activeSection");
+	const activeButtonIndex = localStorage.getItem("activeButton");
+	if (activeSection && activeButtonIndex !== null) {
+		const navButtons = document.getElementsByClassName("nav-buttons");
+		const activeButton = navButtons[activeButtonIndex];
+		if (activeButton) {
+			const event = new Event("click");
+			activeButton.dispatchEvent(event);
+		}
+	}
+});
 
 function createNotification(text) {
 	const container = $("#notificationContainer");
@@ -106,6 +127,8 @@ const dercoContainer = document.getElementById("Derco-container");
 const hideStyle = "none";
 const gridStyle = "grid";
 
+if (localStorage.getItem("selectedValue")) selectElement.value = localStorage.getItem("selectedValue");
+
 selectElement.addEventListener("change", function () {
 	const value = selectElement.value;
 	const changeSound = new Audio("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3");
@@ -129,7 +152,30 @@ selectElement.addEventListener("change", function () {
 			dercoContainer.style.display = gridStyle;
 			break;
 	}
+
+	localStorage.setItem("selectedValue", value);
 });
+
+if (localStorage.getItem("selectedValue")) {
+	const storedValue = localStorage.getItem("selectedValue");
+	switch (storedValue) {
+		case "choose-sploop-Om07":
+			urbanContainer.style.display = hideStyle;
+			om07Container.style.display = gridStyle;
+			dercoContainer.style.display = hideStyle;
+			break;
+		case "choose-sploop-Urban-Dubov":
+			urbanContainer.style.display = gridStyle;
+			om07Container.style.display = hideStyle;
+			dercoContainer.style.display = hideStyle;
+			break;
+		case "choose-sploop-Derco":
+			urbanContainer.style.display = hideStyle;
+			om07Container.style.display = hideStyle;
+			dercoContainer.style.display = gridStyle;
+			break;
+	}
+}
 
 const endUTC = Date.UTC(2023, 5, 8, 19);
 const _second = 1000;
