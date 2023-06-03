@@ -12,27 +12,27 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 		<script src="script.js" defer></script>
 	</head>
-	<body onload="incrementCounter()">
+	<body onload="run.incrementCounter()">
 		<div id="notificationContainer" class="notification-container"></div>
 		<nav class="top-bar">
 			<span class="title">Scripts</span>
 			<div class="nav-buttons-container">
-				<span class="nav-buttons active" onclick="changeTab(event, 'home')">
+				<span class="nav-buttons active" onclick="run.changeTab(event, 'home')">
 					<i class="ri-home-smile-fill"></i>
 				</span>
-				<span class="nav-buttons" onclick="changeTab(event, 'code')">
+				<span class="nav-buttons" onclick="run.changeTab(event, 'code')">
 					<i class="ri-code-box-fill"></i>
 				</span>
-				<span class="nav-buttons" onclick="changeTab(event, 'palette')">
+				<span class="nav-buttons" onclick="run.changeTab(event, 'palette')">
 					<i class="ri-palette-fill"></i>
 				</span>
-				<span class="nav-buttons" onclick="changeTab(event, 'contact')">
+				<span class="nav-buttons" onclick="run.changeTab(event, 'contact')">
 					<i class="ri-discuss-fill"></i>
 				</span>
-				<span class="nav-buttons" onclick="changeTab(event, 'community-love')">
+				<span class="nav-buttons" onclick="run.changeTab(event, 'community-love')">
 					<i class="ri-heart-2-fill"></i>
 				</span>
-				<span class="nav-buttons" onclick="changeTab(event, 'bug')">
+				<span class="nav-buttons" onclick="run.changeTab(event, 'bug')">
 					<i class="ri-bug-fill"></i>
 				</span>
 			</div>
@@ -43,7 +43,7 @@
 			<p class="light-color-show">Your visits: <span id="counter">*</span></p>
 			<p class="light-color-show">Tracker script - <span id="countdown">*</span></p>
 			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>A speedy website designed by <span class="random-buttons" onclick="createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span> to provide individuals with the ability to download scripts for their preferred io game.
+				<i class="ri-message-3-line"></i>A speedy website designed by <span class="random-buttons" onclick="run.createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span> to provide individuals with the ability to download scripts for their preferred io game.
 			</p>
 			<p class="tab-information-2"><i class="ri-message-3-line"></i>This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
 			<p class="tab-information-3"><i class="ri-message-3-line"></i>Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
@@ -126,16 +126,16 @@
 			<p class="tab-information-3"><i class="ri-message-3-line"></i>If developers are seeking attractive color designs, the following hues are recommended.</p>
 			<p class="light-color-show">The color scheme utilized on my website:</p>
 			<div class="button-container">
-				<a class="button" onclick="createNotification('#0b130f')">Website background</a>
-				<a class="button" onclick="createNotification('#040b05')">Button background</a>
-				<a class="button" onclick="createNotification('#a27e49')">Text color</a>
-				<a class="button" onclick="createNotification('#897961')">Light text color</a>
-				<a class="button" onclick="createNotification('#a27e4999')">Shadow color</a>
+				<a class="button" onclick="run.createNotification('#0b130f')">Website background</a>
+				<a class="button" onclick="run.createNotification('#040b05')">Button background</a>
+				<a class="button" onclick="run.createNotification('#a27e49')">Text color</a>
+				<a class="button" onclick="run.createNotification('#897961')">Light text color</a>
+				<a class="button" onclick="run.createNotification('#a27e4999')">Shadow color</a>
 			</div>
 		</div>
 		<div class="section-container" id="contact" style="display: none">
 			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>You may send a message to <span class="random-buttons" onclick="createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span>
+				<i class="ri-message-3-line"></i>You may send a message to <span class="random-buttons" onclick="run.createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span>
 				if you possess a script that you wish for Urban to share.
 			</p>
 			<p class="tab-information-2"><i class="ri-message-3-line"></i>To ensure the safety of the community, we will not accept any obfuscated scripts.</p>
@@ -148,7 +148,7 @@
 		</div>
 		<div class="section-container" id="bug" style="display: none">
 			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>Kindly report any bugs you discover to <span class="random-buttons" onclick="createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span>.
+				<i class="ri-message-3-line"></i>Kindly report any bugs you discover to <span class="random-buttons" onclick="run.createNotification('Urban Dubov#8571')"><i class="ri-clipboard-line"></i>Urban Dubov#8571</span>.
 			</p>
 			<p class="tab-information-2"><i class="ri-message-3-line"></i>There have been some issues, which is why Urban Dubov is seeking feedback on errors or problems in order to address them promptly.</p>
 			<p class="tab-information-3"><i class="ri-message-3-line"></i>Provide the website or any scripts related to the issues you are encountering.</p>
