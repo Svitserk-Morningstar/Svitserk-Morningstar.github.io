@@ -225,6 +225,7 @@ select {
   align-items: center;
   gap: 1rem;
   margin: 5rem 0;
+  transition: opacity 300ms ease-in-out;
 }
 
 .button-container {

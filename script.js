@@ -73,21 +73,43 @@ class Functions {
 			const value = this.selectElement.value;
 			this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
+			const hideStyle = "none";
+			const gridStyle = "grid";
+
+			this.urbanContainer.style.transition = "opacity 200ms ease-in-out";
+			this.om07Container.style.transition = "opacity 200ms ease-in-out";
+			this.dercoContainer.style.transition = "opacity 200ms ease-in-out";
+
 			switch (value) {
 				case "choose-sploop-Om07":
-					this.urbanContainer.style.display = hideStyle;
-					this.om07Container.style.display = gridStyle;
-					this.dercoContainer.style.display = hideStyle;
+					this.urbanContainer.style.opacity = 0;
+					this.om07Container.style.opacity = 1;
+					this.dercoContainer.style.opacity = 0;
+					setTimeout(() => {
+						this.urbanContainer.style.display = hideStyle;
+						this.om07Container.style.display = gridStyle;
+						this.dercoContainer.style.display = hideStyle;
+					}, 200);
 					break;
 				case "choose-sploop-Urban-Dubov":
-					this.urbanContainer.style.display = gridStyle;
-					this.om07Container.style.display = hideStyle;
-					this.dercoContainer.style.display = hideStyle;
+					this.urbanContainer.style.opacity = 1;
+					this.om07Container.style.opacity = 0;
+					this.dercoContainer.style.opacity = 0;
+					setTimeout(() => {
+						this.urbanContainer.style.display = gridStyle;
+						this.om07Container.style.display = hideStyle;
+						this.dercoContainer.style.display = hideStyle;
+					}, 200);
 					break;
 				case "choose-sploop-Derco":
-					this.urbanContainer.style.display = hideStyle;
-					this.om07Container.style.display = hideStyle;
-					this.dercoContainer.style.display = gridStyle;
+					this.urbanContainer.style.opacity = 0;
+					this.om07Container.style.opacity = 0;
+					this.dercoContainer.style.opacity = 1;
+					setTimeout(() => {
+						this.urbanContainer.style.display = hideStyle;
+						this.om07Container.style.display = hideStyle;
+						this.dercoContainer.style.display = gridStyle;
+					}, 200);
 					break;
 			}
 
@@ -201,6 +223,7 @@ class Functions {
 		let i, sectionContainer, navButtons;
 		sectionContainer = document.getElementsByClassName("section-container");
 		for (i = 0; i < sectionContainer.length; i++) {
+			sectionContainer[i].style.opacity = 0;
 			sectionContainer[i].style.display = "none";
 		}
 		navButtons = document.getElementsByClassName("nav-buttons");
@@ -209,7 +232,14 @@ class Functions {
 			navButtons[i].classList.add("inactive");
 		}
 		this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
-		document.getElementById(name).style.display = "flex";
+
+		let activeSection = document.getElementById(name);
+		activeSection.style.display = "flex";
+
+		setTimeout(() => {
+			activeSection.style.opacity = 1;
+		}, 10);
+
 		evt.currentTarget.classList.remove("inactive");
 		evt.currentTarget.classList.add("active");
 
