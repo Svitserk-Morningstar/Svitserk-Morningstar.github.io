@@ -75,43 +75,49 @@ class Functions {
 
 			const hideStyle = "none";
 			const gridStyle = "grid";
+			const transitionDuration = 100;
 
-			this.urbanContainer.style.transition = "opacity 200ms ease-in-out";
-			this.om07Container.style.transition = "opacity 200ms ease-in-out";
-			this.dercoContainer.style.transition = "opacity 200ms ease-in-out";
+			this.urbanContainer.style.opacity = 0;
+			this.om07Container.style.opacity = 0;
+			this.dercoContainer.style.opacity = 0;
 
-			switch (value) {
-				case "choose-sploop-Om07":
-					this.urbanContainer.style.opacity = 0;
-					this.om07Container.style.opacity = 1;
-					this.dercoContainer.style.opacity = 0;
-					setTimeout(() => {
+			this.urbanContainer.style.transition = `opacity ${transitionDuration}ms ease-in-out`;
+			this.om07Container.style.transition = `opacity ${transitionDuration}ms ease-in-out`;
+			this.dercoContainer.style.transition = `opacity ${transitionDuration}ms ease-in-out`;
+
+			const transitionEndHandler = () => {
+				this.urbanContainer.removeEventListener("transitionend", transitionEndHandler);
+				this.om07Container.removeEventListener("transitionend", transitionEndHandler);
+				this.dercoContainer.removeEventListener("transitionend", transitionEndHandler);
+
+				switch (value) {
+					case "choose-sploop-Om07":
 						this.urbanContainer.style.display = hideStyle;
 						this.om07Container.style.display = gridStyle;
 						this.dercoContainer.style.display = hideStyle;
-					}, 200);
-					break;
-				case "choose-sploop-Urban-Dubov":
-					this.urbanContainer.style.opacity = 1;
-					this.om07Container.style.opacity = 0;
-					this.dercoContainer.style.opacity = 0;
-					setTimeout(() => {
+						break;
+					case "choose-sploop-Urban-Dubov":
 						this.urbanContainer.style.display = gridStyle;
 						this.om07Container.style.display = hideStyle;
 						this.dercoContainer.style.display = hideStyle;
-					}, 200);
-					break;
-				case "choose-sploop-Derco":
-					this.urbanContainer.style.opacity = 0;
-					this.om07Container.style.opacity = 0;
-					this.dercoContainer.style.opacity = 1;
-					setTimeout(() => {
+						break;
+					case "choose-sploop-Derco":
 						this.urbanContainer.style.display = hideStyle;
 						this.om07Container.style.display = hideStyle;
 						this.dercoContainer.style.display = gridStyle;
-					}, 200);
-					break;
-			}
+						break;
+				}
+
+				setTimeout(() => {
+					this.urbanContainer.style.opacity = 1;
+					this.om07Container.style.opacity = 1;
+					this.dercoContainer.style.opacity = 1;
+				}, 0);
+			};
+
+			this.urbanContainer.addEventListener("transitionend", transitionEndHandler);
+			this.om07Container.addEventListener("transitionend", transitionEndHandler);
+			this.dercoContainer.addEventListener("transitionend", transitionEndHandler);
 
 			localStorage.setItem("selectedValue", value);
 		});
@@ -156,7 +162,7 @@ class Functions {
 				clearInterval(timer);
 				document.getElementById("countdown").innerHTML = `
 		  released, check out
-		  <span class="random-buttons" onclick="run.changeTab(event, 'code')">
+		  <span class="random-buttons" onclick="run.changeTab(event, 'files')">
 			<i class="ri-code-box-fill"></i>
 		  </span>
 		  `;
