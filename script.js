@@ -3,10 +3,10 @@ class Functions {
 		this.fps = 0;
 		this.frames = 0;
 		this.count = 0;
-		this.selectElement = document.getElementById("Urban-Dubov-sploop-scripts");
-		this.urbanContainer = document.getElementById("urbans-container");
-		this.om07Container = document.getElementById("Om07s-container");
-		this.dercoContainer = document.getElementById("Derco-container");
+		this.selectElement = document.querySelector("#Urban-Dubov-sploop-scripts");
+		this.urbanContainer = document.querySelector("#urbans-container");
+		this.om07Container = document.querySelector("#Om07s-container");
+		this.dercoContainer = document.querySelector("#Derco-container");
 
 		this.startPinging = this.startPinging.bind(this);
 		this.updateFPS = this.updateFPS.bind(this);
@@ -22,6 +22,13 @@ class Functions {
 		this.setupSound();
 		this.setupTabs();
 		this.setupCountdown();
+		this.setupButtonCounter();
+	}
+
+	setupButtonCounter() {
+		const buttons = document.getElementsByClassName("counting-buttons");
+		const total = buttons.length;
+		document.querySelector("#count-buttons-display").innerHTML = total;
 	}
 
 	setupPing() {
@@ -39,7 +46,7 @@ class Functions {
 			this.count = 1;
 			localStorage.setItem("count", this.count);
 		}
-		document.getElementById("counter").innerHTML = this.count;
+		document.querySelector("#counter").innerHTML = this.count;
 	}
 
 	setupSound() {
@@ -160,7 +167,7 @@ class Functions {
 
 			if (distance < 0) {
 				clearInterval(timer);
-				document.getElementById("countdown").innerHTML = `
+				document.querySelector("#countdown").innerHTML = `
 		  released, check out
 		  <span class="random-buttons" onclick="run.changeTab(event, 'files')">
 			<i class="ri-code-box-fill"></i>
@@ -175,7 +182,7 @@ class Functions {
 			const seconds = Math.floor((distance % _minute) / _second);
 
 			const countdownString = days + " days, " + hours + " hrs, " + minutes + " mins, " + seconds + " secs";
-			document.getElementById("countdown").innerHTML = countdownString;
+			document.querySelector("#countdown").innerHTML = countdownString;
 		}
 
 		timer = setInterval(showRemaining, 1000);
@@ -189,7 +196,7 @@ class Functions {
 			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 				let endTime = new Date().getTime();
 				let pingTime = endTime - startTime;
-				document.getElementById("pingCounter").innerHTML = pingTime;
+				document.querySelector("#pingCounter").innerHTML = pingTime;
 			}
 		};
 
@@ -206,7 +213,7 @@ class Functions {
 	updateFPS() {
 		this.fps = this.frames;
 		this.frames = 0;
-		document.getElementById("fps-counter").innerText = this.fps;
+		document.querySelector("#fps-counter").innerText = this.fps;
 	}
 
 	countFrames() {
@@ -216,7 +223,7 @@ class Functions {
 	incrementCounter() {
 		this.count++;
 		localStorage.setItem("count", this.count);
-		document.getElementById("counter").innerHTML = this.count;
+		document.querySelector("#counter").innerHTML = this.count;
 	}
 
 	playSound(audio, volume) {

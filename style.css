@@ -204,11 +204,12 @@ select {
 }
 
 .display-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: var(--shade-3);
   outline: 0.125rem solid var(--shade-1);
+  border: none;
   font-family: "Wix Madefor Display", sans-serif;
   background-color: var(--shade-5);
   transition: all 500ms;
@@ -271,6 +272,7 @@ select {
   color: var(--shade-3);
   outline: 0.125rem solid var(--shade-1);
   font-family: "Wix Madefor Display", sans-serif;
+  border: none;
   background-color: var(--shade-5);
   transition: all 500ms;
   box-shadow: 0 0 0.8125rem 0 var(--shadow-1);
