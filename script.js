@@ -19,7 +19,6 @@ class Functions {
 
 		this.setupPing();
 		this.setupCounter();
-		this.setupSound();
 		this.setupTabs();
 		this.setupCountdown();
 		this.setupButtonCounter();
@@ -49,12 +48,6 @@ class Functions {
 		document.querySelector("#counter").innerHTML = this.count;
 	}
 
-	setupSound() {
-		const audio = "https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3";
-		const volume = 0.2;
-		this.playSound(audio, volume);
-	}
-
 	setupTabs() {
 		window.addEventListener("DOMContentLoaded", () => {
 			const activeSection = localStorage.getItem("activeSection");
@@ -78,7 +71,7 @@ class Functions {
 
 		this.selectElement.addEventListener("change", () => {
 			const value = this.selectElement.value;
-			this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
+			this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
 			const hideStyle = "none";
 			const gridStyle = "grid";
@@ -244,7 +237,7 @@ class Functions {
 			navButtons[i].classList.remove("active");
 			navButtons[i].classList.add("inactive");
 		}
-		this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114343994151940106/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
+		this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
 		let activeSection = document.getElementById(name);
 		activeSection.style.display = "flex";
@@ -271,7 +264,7 @@ class Functions {
 			.addClass("notification fade-out")
 			.text("Copied " + text);
 		container.prepend(notification);
-		this.playSound("https://cdn.discordapp.com/attachments/1094697576391004272/1114342145655066665/soundscrate-graphics-soft-pluck-confirmation.mp3", 0.2);
+		this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3", 0.2);
 		notification[0].offsetHeight;
 		notification.removeClass("fade-out");
 		notification.addClass("fade-in");
