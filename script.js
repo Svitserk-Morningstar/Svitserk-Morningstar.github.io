@@ -163,7 +163,7 @@ class Functions {
 				document.querySelector("#countdown").innerHTML = `
 		  released, check out
 		  <span class="random-buttons" onclick="run.changeTab(event, 'files')">
-			<i class="ri-code-box-fill"></i>
+		  <i class="ri-download-cloud-2-line"></i>
 		  </span>
 		  `;
 				return;
