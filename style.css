@@ -212,6 +212,8 @@ select {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  display: grid;
+  place-content: center;
   color: var(--shade-3);
   outline: 0.125rem solid var(--shade-1);
   border: none;
@@ -238,7 +240,7 @@ select {
   outline: 0.125rem solid var(--shade-1);
   border: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   font-family: "Wix Madefor Display", sans-serif;
   font-weight: bold;
