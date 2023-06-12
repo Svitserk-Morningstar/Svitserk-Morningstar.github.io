@@ -22,6 +22,91 @@ class Functions {
 		this.setupTabs();
 		this.setupCountdown();
 		this.setupButtonCounter();
+		this.setupLocalStorage();
+		this.setupToggleItems();
+	}
+
+	setupToggleItems() {
+		const toggleCheckbox = document.querySelector("#upcoming-scripts");
+		const elementsToToggle = document.querySelectorAll(".disabled");
+		const savedState = localStorage.getItem("toggleState");
+
+		if (savedState === "checked") {
+			toggleCheckbox.checked = true;
+			showElements();
+		} else {
+			toggleCheckbox.checked = false;
+			hideElements();
+		}
+
+		toggleCheckbox.addEventListener("change", function () {
+			if (this.checked) {
+				showElements();
+				localStorage.setItem("toggleState", "checked");
+			} else {
+				hideElements();
+				localStorage.setItem("toggleState", "unchecked");
+			}
+		});
+
+		function showElements() {
+			elementsToToggle.forEach(function (element) {
+				element.style.display = "grid";
+			});
+		}
+
+		function hideElements() {
+			elementsToToggle.forEach(function (element) {
+				element.style.display = "none";
+			});
+		}
+	}
+
+	setupLocalStorage() {
+		!(function (t) {
+			t.fn.savy = function (e, i) {
+				const s = "savy-";
+				"load" == e
+					? (t(this).each(function () {
+							t(this).is(":radio")
+								? (localStorage.getItem(s + t(this).attr("name")) && (localStorage.getItem(s + t(this).attr("name")) == this.id ? (this.checked = !0) : (this.checked = !1)),
+								  t(this).change(function () {
+										localStorage.setItem(s + t(this).attr("name"), this.id);
+								  }))
+								: t(this).is(":checkbox")
+								? (localStorage.getItem(s + this.id) && (this.checked = "1" == localStorage.getItem(s + this.id)),
+								  t(this).change(function () {
+										localStorage.setItem(s + this.id, this.checked ? "1" : "0");
+								  }))
+								: t(this).is("input") || t(this).is("textarea")
+								? (localStorage.getItem(s + this.id) && (this.value = localStorage.getItem(s + this.id)),
+								  t(this).on("focus", function () {
+										let e = setInterval(() => {
+											localStorage.setItem(s + this.id, this.value), t(this).is(":focus") || clearInterval(e);
+										}, 500);
+								  }))
+								: t(this).is("select") &&
+								  (t(this).is("[multiple]")
+										? (localStorage.getItem(s + this.id) ? t(this).val(localStorage.getItem(s + this.id).split(",")) : localStorage.setItem(s + this.id, t(this).val()),
+										  t(this).change(function () {
+												localStorage.setItem(s + this.id, t(this).val());
+										  }))
+										: (localStorage.getItem(s + this.id) ? t(this).val(localStorage.getItem("savy-" + this.id)) : localStorage.setItem(s + this.id, t(this).val()),
+										  t(this).change(function () {
+												localStorage.setItem(s + this.id, t(this).val());
+										  })));
+					  }),
+					  t.isFunction(i) && i())
+					: "destroy" == e
+					? (t(this).each(function () {
+							localStorage.getItem(s + this.id) && localStorage.removeItem(s + this.id);
+					  }),
+					  t.isFunction(i) && i())
+					: console.error("savy action not defined please use $('.classname').savy('load') to trigger savy to save all inputs");
+			};
+		})(jQuery);
+
+		$(".auto-save").savy("load");
 	}
 
 	setupButtonCounter() {
@@ -71,7 +156,7 @@ class Functions {
 
 		this.selectElement.addEventListener("change", () => {
 			const value = this.selectElement.value;
-			this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
+			if (document.querySelector("#site-sounds").checked) this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
 			const hideStyle = "none";
 			const gridStyle = "grid";
@@ -237,7 +322,7 @@ class Functions {
 			navButtons[i].classList.remove("active");
 			navButtons[i].classList.add("inactive");
 		}
-		this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
+		if (document.querySelector("#site-sounds").checked) this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 
 		let activeSection = document.getElementById(name);
 		activeSection.style.display = "flex";
@@ -264,7 +349,7 @@ class Functions {
 			.addClass("notification fade-out")
 			.text("Copied " + text);
 		container.prepend(notification);
-		this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3", 0.2);
+		if (document.querySelector("#site-sounds").checked) this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3", 0.2);
 		notification[0].offsetHeight;
 		notification.removeClass("fade-out");
 		notification.addClass("fade-in");

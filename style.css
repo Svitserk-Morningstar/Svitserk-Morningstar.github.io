@@ -171,6 +171,11 @@ select {
   pointer-events: none;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .light-color-show {
   font-weight: bold;
   color: var(--shade-1);
@@ -211,12 +216,38 @@ select {
   outline: 0.125rem solid var(--shade-1);
   border: none;
   font-family: "Wix Madefor Display", sans-serif;
+  font-weight: bold;
   background-color: var(--shade-5);
   transition: all 500ms;
   box-shadow: 0 0 0.8125rem 0 var(--shadow-1);
   filter: opacity(0.5);
 }
 .display-button:hover {
+  filter: opacity(1);
+  transition: all 300ms;
+  background-color: var(--shade-4);
+  transform: translate(0.1875rem, -0.1875rem);
+  box-shadow: -0.1875rem 0.1875rem 0.8125rem 0 var(--shadow-1);
+}
+
+.display-toggle-button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: var(--shade-3);
+  outline: 0.125rem solid var(--shade-1);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: bold;
+  background-color: var(--shade-5);
+  transition: all 500ms;
+  box-shadow: 0 0 0.8125rem 0 var(--shadow-1);
+  filter: opacity(0.5);
+}
+.display-toggle-button:hover {
   filter: opacity(1);
   transition: all 300ms;
   background-color: var(--shade-4);
@@ -272,6 +303,7 @@ select {
   color: var(--shade-3);
   outline: 0.125rem solid var(--shade-1);
   font-family: "Wix Madefor Display", sans-serif;
+  font-weight: bold;
   border: none;
   background-color: var(--shade-5);
   transition: all 500ms;
@@ -291,6 +323,59 @@ select {
   box-shadow: -0.1875rem 0.1875rem 0.8125rem 0 var(--shadow-1);
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.125rem;
+  transform: scale(0.7);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3a3a3a;
+  transition: 300ms;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625rem;
+  width: 1.625rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: var(--shade-1);
+  transition: 300ms;
+}
+
+input:checked + .slider {
+  background-color: #696969;
+}
+
+input:checked + .slider:before {
+  background-color: var(--shade-3);
+  transform: translateX(1.625rem);
+}
+
+.slider.round {
+  border-radius: 2.125rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 @media (max-width: 106.25rem) {
   body {
     padding: 0 25rem;
@@ -306,7 +391,7 @@ select {
     padding: 0 15rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 75rem) {
   .nav-buttons,
   .title {
     font-size: 1.5em;
@@ -322,15 +407,13 @@ select {
 }
 @media (max-width: 56.25rem) {
   body {
-    padding: 0 80px;
+    padding: 0 5rem;
   }
 }
 @media (max-width: 43.75rem) {
   body {
     padding: 0;
   }
-}
-@media (max-width: 31.25rem) {
   .top-bar {
     filter: opacity(1);
     justify-content: center;
