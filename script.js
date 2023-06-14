@@ -31,7 +31,7 @@ class Functions {
 		particlesJS("particles-js", {
 			particles: {
 				number: {
-					value: 80,
+					value: document.querySelector("#particles").checked ? 80 : 0,
 					density: {
 						enable: true,
 						value_area: 800,
@@ -140,7 +140,7 @@ class Functions {
 		const elementsToToggle = document.querySelectorAll(".disabled");
 		const savedState = localStorage.getItem("toggleState");
 
-		if (savedState === "checked") {
+		if (savedState !== "unchecked") {
 			toggleCheckbox.checked = true;
 			showElements();
 		} else {
