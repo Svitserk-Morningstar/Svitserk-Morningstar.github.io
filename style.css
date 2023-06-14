@@ -313,16 +313,17 @@ select {
   cursor: pointer;
   filter: opacity(0.5);
 }
-.button-container .button.disabled {
-  pointer-events: none;
-  opacity: 0.4;
-}
 .button-container .button:hover {
   filter: opacity(1);
   transition: all 300ms;
   background-color: var(--shade-4);
   transform: translate(0.1875rem, -0.1875rem);
   box-shadow: -0.1875rem 0.1875rem 0.8125rem 0 var(--shadow-1);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .switch {
