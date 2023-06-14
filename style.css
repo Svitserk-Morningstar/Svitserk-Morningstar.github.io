@@ -378,6 +378,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+#particles-js {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 @media (max-width: 106.25rem) {
   body {
     padding: 0 25rem;
