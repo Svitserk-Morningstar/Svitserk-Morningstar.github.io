@@ -22,7 +22,6 @@ class Functions {
 
 	setup() {
 		this.setupPing();
-		this.setupCounter();
 		this.setupTabs();
 		this.setupCountdown();
 		this.setupButtonCounter();
