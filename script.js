@@ -27,6 +27,7 @@ class Functions {
 		this.setupButtonCounter();
 		this.setupLocalStorage();
 		this.setupParticles();
+		this.setupCounter();
 	}
 
 	setupParticles() {
@@ -186,7 +187,7 @@ class Functions {
 		if (localStorage.getItem("count")) {
 			this.count = parseInt(localStorage.getItem("count"));
 		} else {
-			this.count = 1;
+			this.count = 0;
 			localStorage.setItem("count", this.count);
 		}
 		document.querySelector("#counter").innerHTML = this.count;
