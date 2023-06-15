@@ -1,3 +1,5 @@
+let contentLoaded = false;
+
 class Functions {
 	constructor() {
 		this.fps = 0;
@@ -12,7 +14,6 @@ class Functions {
 		this.updateFPS = this.updateFPS.bind(this);
 		this.countFrames = this.countFrames.bind(this);
 		this.loop = this.loop.bind(this);
-		this.incrementCounter = this.incrementCounter.bind(this);
 		this.changeTab = this.changeTab.bind(this);
 		this.createNotification = this.createNotification.bind(this);
 
@@ -239,7 +240,7 @@ class Functions {
 
 		this.selectElement.addEventListener("change", () => {
 			const value = this.selectElement.value;
-			if (document.querySelector("#site-sounds").checked) {
+			if (document.querySelector("#site-sounds").checked && contentLoaded) {
 				this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
 			}
 
@@ -374,6 +375,10 @@ class Functions {
 			button.classList.remove("active");
 			button.classList.add("inactive");
 		});
+
+		if (document.querySelector("#site-sounds").checked && contentLoaded) {
+			this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
+		}
 
 		const activeSection = document.getElementById(name);
 		activeSection.style.display = "flex";
