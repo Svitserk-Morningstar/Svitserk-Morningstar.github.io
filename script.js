@@ -13,7 +13,6 @@ class Functions {
 		this.countFrames = this.countFrames.bind(this);
 		this.loop = this.loop.bind(this);
 		this.incrementCounter = this.incrementCounter.bind(this);
-		this.playSound = this.playSound.bind(this);
 		this.changeTab = this.changeTab.bind(this);
 		this.createNotification = this.createNotification.bind(this);
 
@@ -375,10 +374,6 @@ class Functions {
 			button.classList.remove("active");
 			button.classList.add("inactive");
 		});
-
-		if (document.querySelector("#site-sounds").checked) {
-			this.playSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0.2);
-		}
 
 		const activeSection = document.getElementById(name);
 		activeSection.style.display = "flex";
