@@ -182,21 +182,21 @@
 				<span class="display-toggle-button">
 					<span>Sounds</span>
 					<label class="switch">
-						<input type="checkbox" class="auto-save" id="site-sounds" checked />
+						<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3', 0.2);" checked />
 						<span class="slider round"></span>
 					</label>
 				</span>
 				<span class="display-toggle-button">
 					<span>Upcoming scripts</span>
 					<label class="switch">
-						<input type="checkbox" class="auto-save" id="upcoming-scripts" checked />
+						<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3', 0.2);" checked />
 						<span class="slider round"></span>
 					</label>
 				</span>
 				<span class="display-toggle-button">
 					<span>Particles</span>
-					<label class="switch disabled">
-						<input type="checkbox" class="auto-save" id="particles" onchange="run.setupParticles();" checked />
+					<label class="switch">
+						<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3', 0.2);" checked />
 						<span class="slider round"></span>
 					</label>
 				</span>
