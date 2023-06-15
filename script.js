@@ -123,70 +123,46 @@ class Functions {
 	}
 
 	setupLocalStorage() {
-		(function ($) {
-			$.fn.savy = function (action, callback) {
-				const prefix = "savy-";
-
-				function saveItem(item, value) {
-					localStorage.setItem(prefix + item.id, value);
-				}
-
-				function loadItem(item) {
-					if (localStorage.getItem(prefix + item.id)) {
-						const value = localStorage.getItem(prefix + item.id);
-
-						if (item.is(":radio")) {
-							item.prop("checked", localStorage.getItem(prefix + item.attr("name")) === item.attr("id"));
-							item.change(function () {
-								saveItem(item, item.prop("checked") ? item.attr("id") : "");
-							});
-						} else if (item.is(":checkbox")) {
-							item.prop("checked", localStorage.getItem(prefix + item.attr("id")) === "1");
-							item.change(function () {
-								saveItem(item, item.prop("checked") ? "1" : "0");
-							});
-						} else if (item.is("input") || item.is("textarea")) {
-							item.val(value);
-							item.on("focus", function () {
-								let interval = setInterval(() => {
-									saveItem(item, item.val());
-									if (!item.is(":focus")) {
-										clearInterval(interval);
-									}
-								}, 500);
-							});
-						} else if (item.is("select")) {
-							if (item.is("[multiple]")) {
-								item.val(value.split(","));
-							} else {
-								item.val(value);
-							}
-							item.change(function () {
-								saveItem(item, item.val());
-							});
-						}
-					}
-				}
-
-				if (action === "load") {
-					this.each(function () {
-						loadItem($(this));
-					});
-					if ($.isFunction(callback)) {
-						callback();
-					}
-				} else if (action === "destroy") {
-					this.each(function () {
-						if (localStorage.getItem(prefix + this.id)) {
-							localStorage.removeItem(prefix + this.id);
-						}
-					});
-					if ($.isFunction(callback)) {
-						callback();
-					}
-				} else {
-					console.error("Savy action not defined. Please use $('.classname').savy('load') to trigger savy to save all inputs.");
-				}
+		!(function (t) {
+			t.fn.savy = function (e, i) {
+				const s = "savy-";
+				"load" == e
+					? (t(this).each(function () {
+							t(this).is(":radio")
+								? (localStorage.getItem(s + t(this).attr("name")) && (localStorage.getItem(s + t(this).attr("name")) == this.id ? (this.checked = !0) : (this.checked = !1)),
+								  t(this).change(function () {
+										localStorage.setItem(s + t(this).attr("name"), this.id);
+								  }))
+								: t(this).is(":checkbox")
+								? (localStorage.getItem(s + this.id) && (this.checked = "1" == localStorage.getItem(s + this.id)),
+								  t(this).change(function () {
+										localStorage.setItem(s + this.id, this.checked ? "1" : "0");
+								  }))
+								: t(this).is("input") || t(this).is("textarea")
+								? (localStorage.getItem(s + this.id) && (this.value = localStorage.getItem(s + this.id)),
+								  t(this).on("focus", function () {
+										var e = setInterval(() => {
+											localStorage.setItem(s + this.id, this.value), t(this).is(":focus") || clearInterval(e);
+										}, 500);
+								  }))
+								: t(this).is("select") &&
+								  (t(this).is("[multiple]")
+										? (localStorage.getItem(s + this.id) ? t(this).val(localStorage.getItem(s + this.id).split(",")) : localStorage.setItem(s + this.id, t(this).val()),
+										  t(this).change(function () {
+												localStorage.setItem(s + this.id, t(this).val());
+										  }))
+										: (localStorage.getItem(s + this.id) ? t(this).val(localStorage.getItem("savy-" + this.id)) : localStorage.setItem(s + this.id, t(this).val()),
+										  t(this).change(function () {
+												localStorage.setItem(s + this.id, t(this).val());
+										  })));
+					  }),
+					  t.isFunction(i) && i())
+					: "destroy" == e
+					? (t(this).each(function () {
+							localStorage.getItem(s + this.id) && localStorage.removeItem(s + this.id);
+					  }),
+					  t.isFunction(i) && i())
+					: console.error("savy action not defined please use $('.classname').savy('load') to trigger savy to save all inputs");
 			};
 		})(jQuery);
 
