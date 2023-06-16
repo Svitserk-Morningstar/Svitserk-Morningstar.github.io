@@ -5,7 +5,7 @@ class Functions {
 		this.fps = 0;
 		this.frames = 0;
 		this.count = 0;
-		this.selectElement = document.querySelector("#Urban-Dubov-sploop-scripts");
+		this.selectElement = document.querySelector("#Mr-Elusive-sploop-scripts");
 		this.urbanContainer = document.querySelector("#urbans-container");
 		this.om07Container = document.querySelector("#Om07s-container");
 		this.dercoContainer = document.querySelector("#Derco-container");
@@ -233,7 +233,7 @@ class Functions {
 				this.om07Container.removeEventListener("transitionend", transitionEndHandler);
 				this.dercoContainer.removeEventListener("transitionend", transitionEndHandler);
 
-				this.urbanContainer.style.display = value === "choose-sploop-Urban-Dubov" ? gridStyle : hideStyle;
+				this.urbanContainer.style.display = value === "choose-sploop-Mr-Elusive" ? gridStyle : hideStyle;
 				this.om07Container.style.display = value === "choose-sploop-Om07" ? gridStyle : hideStyle;
 				this.dercoContainer.style.display = value === "choose-sploop-Derco" ? gridStyle : hideStyle;
 
@@ -253,7 +253,7 @@ class Functions {
 
 		if (localStorage.getItem("selectedValue")) {
 			const storedValue = localStorage.getItem("selectedValue");
-			this.urbanContainer.style.display = storedValue === "choose-sploop-Urban-Dubov" ? gridStyle : hideStyle;
+			this.urbanContainer.style.display = storedValue === "choose-sploop-Mr-Elusive" ? gridStyle : hideStyle;
 			this.om07Container.style.display = storedValue === "choose-sploop-Om07" ? gridStyle : hideStyle;
 			this.dercoContainer.style.display = storedValue === "choose-sploop-Derco" ? gridStyle : hideStyle;
 		}
