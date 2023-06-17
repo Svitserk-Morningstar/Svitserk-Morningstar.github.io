@@ -336,12 +336,19 @@ class Functions {
 	ping(url) {
 		let startTime = new Date().getTime();
 		let xhr = new XMLHttpRequest();
+		let pingCounter = document.querySelector("#pingCounter");
 
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 				let endTime = new Date().getTime();
 				let pingTime = endTime - startTime;
-				document.querySelector("#pingCounter").innerHTML = pingTime;
+				pingCounter.innerHTML = pingTime;
+
+				if (pingTime > 10) {
+					pingCounter.style.color = "orange";
+				} else {
+					pingCounter.style.color = "";
+				}
 			}
 		};
 
