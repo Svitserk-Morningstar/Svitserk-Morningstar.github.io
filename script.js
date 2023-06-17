@@ -28,6 +28,44 @@ class Functions {
 		this.setupLocalStorage();
 		this.setupParticles();
 		this.setupCounter();
+		this.setupSection();
+	}
+
+	setupSection() {
+		let title = document.getElementsByClassName("section-title");
+		let section = document.getElementsByClassName("section-content");
+		let clickEnabled = new Array(title.length).fill(true);
+
+		for (let i = 0; i < title.length; i++) {
+			title[i].addEventListener("click", function () {
+				if (!clickEnabled[i]) {
+					return;
+				}
+
+				clickEnabled[i] = false;
+				this.classList.toggle("active");
+				let icon = this.getElementsByClassName("icon")[0];
+				if (icon) {
+					icon.classList.toggle("rotate");
+				}
+				let content = this.nextElementSibling;
+				if (content.classList.contains("open")) {
+					content.style.maxHeight = "0";
+					content.classList.remove("open");
+					section[i].classList.remove("tooltip-overflow");
+					setTimeout(() => {
+						clickEnabled[i] = true;
+					}, 300);
+				} else {
+					content.style.maxHeight = content.scrollHeight + "px";
+					content.classList.add("open");
+					setTimeout(() => {
+						section[i].classList.add("tooltip-overflow");
+						clickEnabled[i] = true;
+					}, 300);
+				}
+			});
+		}
 	}
 
 	setupParticles() {

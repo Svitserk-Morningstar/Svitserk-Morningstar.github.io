@@ -179,29 +179,66 @@
 			<p class="tab-information-1"><i class="ri-message-3-line"></i>You can modify your settings preferences here.</p>
 			<p class="tab-information-2">-Additional options will be available in the near future.</p>
 			<p class="tab-information-3">-These options will be retained even when the website is reloaded.</p>
-			<p class="button-container">
-				<span class="display-toggle-button">
-					<span>Sounds</span>
-					<label class="switch">
-						<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-						<span class="slider round"></span>
-					</label>
+			<div class="toggles-container">
+				<span>
+					<div class="section">
+						<div class="section-title">
+							<span>Additional</span>
+							<span><i class="ri-arrow-right-s-line icon"></i></span>
+						</div>
+						<div class="section-content">
+							<span class="section-content-spacing">
+								<span>Sounds</span>
+								<label class="switch">
+									<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<span class="slider round"></span>
+								</label>
+							</span>
+						</div>
+					</div>
 				</span>
-				<span class="display-toggle-button">
-					<span>Upcoming scripts</span>
-					<label class="switch">
-						<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-						<span class="slider round"></span>
-					</label>
+				<span>
+					<div class="section">
+						<div class="section-title">
+							<span>Visuals</span>
+							<span><i class="ri-arrow-right-s-line icon"></i></span>
+						</div>
+						<div class="section-content">
+							<span class="section-content-spacing">
+								<span>Particles</span>
+								<label class="switch">
+									<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<span class="slider round"></span>
+								</label>
+							</span>
+						</div>
+					</div>
 				</span>
-				<span class="display-toggle-button">
-					<span>Particles</span>
-					<label class="switch">
-						<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-						<span class="slider round"></span>
-					</label>
+				<span>
+					<div class="section">
+						<div class="section-title">
+							<span>Scripts</span>
+							<span><i class="ri-arrow-right-s-line icon"></i></span>
+						</div>
+						<div class="section-content">
+							<span class="section-content-spacing">
+								<span>Upcoming</span>
+								<label class="switch">
+									<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<span class="slider round"></span>
+								</label>
+							</span>
+							<span class="section-content-spacing" style="pointer-events: none; opacity: 0.5">
+								<span>Suggested</span>
+								<label class="switch">
+									<input type="checkbox" class="auto-save" id="suggested-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" />
+									<span class="slider round"></span>
+								</label>
+							</span>
+						</div>
+					</div>
 				</span>
-			</p>
+			</div>
 		</div>
 		<div class="section-container" id="bug" style="display: none">
 			<p class="tab-information-1">
