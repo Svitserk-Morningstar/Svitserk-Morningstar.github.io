@@ -344,9 +344,9 @@ class Functions {
 				let pingTime = endTime - startTime;
 				pingCounter.innerHTML = pingTime;
 
-				if (pingTime > 10) {
+				if (pingTime > 20) {
 					pingCounter.style.color = "red";
-				} else if (pingTime > 30) {
+				} else if (pingTime > 10) {
 					pingCounter.style.color = "orange";
 				} else {
 					pingCounter.style.color = "";
