@@ -298,7 +298,7 @@ class Functions {
 	}
 
 	setupCountdown() {
-		const endUTC = Date.UTC(2023, 5, 17, 20);
+		const endUTC = Date.UTC(2023, 5, 27, 20);
 		const _second = 1000;
 		const _minute = _second * 60;
 		const _hour = _minute * 60;
