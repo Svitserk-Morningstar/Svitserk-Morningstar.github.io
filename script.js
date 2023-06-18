@@ -345,6 +345,8 @@ class Functions {
 				pingCounter.innerHTML = pingTime;
 
 				if (pingTime > 10) {
+					pingCounter.style.color = "red";
+				} else if (pingTime > 30) {
 					pingCounter.style.color = "orange";
 				} else {
 					pingCounter.style.color = "";
@@ -363,8 +365,18 @@ class Functions {
 	}
 
 	updateFPS() {
+		let fpsCounter = document.querySelector("#fps-counter");
 		this.fps = this.frames;
 		this.frames = 0;
+
+		if (this.fps < 10) {
+			fpsCounter.style.color = "red";
+		} else if (this.fps < 30) {
+			fpsCounter.style.color = "orange";
+		} else {
+			fpsCounter.style.color = "";
+		}
+
 		document.querySelector("#fps-counter").innerText = this.fps;
 	}
 
