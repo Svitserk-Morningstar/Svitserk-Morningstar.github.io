@@ -16,7 +16,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 * {
@@ -100,7 +100,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 0.125rem;
-  z-index: 3;
+  z-index: 4;
 }
 
 .notification {
@@ -413,6 +413,63 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+}
+
+#loader {
+  width: 0.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  display: block;
+  margin: 1.25rem auto;
+  border: solid 2px rgba(0, 0, 0, 0.7);
+  position: relative;
+  background: currentColor;
+  color: var(--shade-1);
+  box-sizing: border-box;
+  animation: animloader 300ms 300ms linear infinite alternate;
+}
+
+#loader::after,
+#loader::before {
+  content: "";
+  width: 0.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background: currentColor;
+  border: solid 2px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.25rem;
+  box-sizing: border-box;
+  animation: animloader 300ms 450ms linear infinite alternate;
+}
+
+#loader::before {
+  left: -1.25rem;
+  animation-delay: 0s;
+}
+
+@keyframes animloader {
+  0% {
+    height: 3rem;
+  }
+  100% {
+    height: 0.25rem;
+  }
+}
 #particles-js {
   width: 100%;
   height: 100vh;

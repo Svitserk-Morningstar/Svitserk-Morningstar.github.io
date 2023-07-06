@@ -15,6 +15,9 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body onload="run.incrementCounter(); contentLoaded = true">
+		<div id="loading-screen">
+			<span id="loader"></span>
+		</div>
 		<div id="particles-js"></div>
 		<div id="notificationContainer" class="notification-container"></div>
 		<nav class="top-bar">
@@ -57,7 +60,7 @@
 				<span>Arrow tracker script - <span id="countdown">*</span></span>
 			</p>
 			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>A speedy website designed by <span class="random-buttons" onclick="run.createNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span> to provide individuals with the ability to download scripts for their preferred io game.
+				<i class="ri-message-3-line"></i>A speedy website designed by <span class="random-buttons" onclick="run.createCopyNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span> to provide individuals with the ability to download scripts for their preferred io game.
 			</p>
 			<p class="tab-information-2">-This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
 			<p class="tab-information-3">-Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
@@ -173,11 +176,11 @@
 			<p class="tab-information-3">-If developers are seeking attractive color designs, the following hues are recommended.</p>
 			<p class="light-color-show">The color scheme utilized on my website:</p>
 			<p class="button-container">
-				<a class="button" onclick="run.createNotification('#0b130f')">Website background</a>
-				<a class="button" onclick="run.createNotification('#040b05')">Button background</a>
-				<a class="button" onclick="run.createNotification('#a27e49')">Text color</a>
-				<a class="button" onclick="run.createNotification('#897961')">Light text color</a>
-				<a class="button" onclick="run.createNotification('#a27e4999')">Shadow color</a>
+				<a class="button" onclick="run.createCopyNotification('#0b130f')">Website background</a>
+				<a class="button" onclick="run.createCopyNotification('#040b05')">Button background</a>
+				<a class="button" onclick="run.createCopyNotification('#a27e49')">Text color</a>
+				<a class="button" onclick="run.createCopyNotification('#897961')">Light text color</a>
+				<a class="button" onclick="run.createCopyNotification('#a27e4999')">Shadow color</a>
 			</p>
 		</div>
 		<div class="section-container" id="setting" style="display: none">
@@ -195,7 +198,7 @@
 							<span class="section-content-spacing">
 								<span>Sounds</span>
 								<label class="switch">
-									<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
 									<span class="slider round"></span>
 								</label>
 							</span>
@@ -212,7 +215,7 @@
 							<span class="section-content-spacing">
 								<span>Particles</span>
 								<label class="switch">
-									<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
 									<span class="slider round"></span>
 								</label>
 							</span>
@@ -229,14 +232,14 @@
 							<span class="section-content-spacing">
 								<span>Upcoming</span>
 								<label class="switch">
-									<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
+									<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
 									<span class="slider round"></span>
 								</label>
 							</span>
 							<span class="section-content-spacing" style="pointer-events: none; opacity: 0.5">
 								<span>Suggested</span>
 								<label class="switch">
-									<input type="checkbox" class="auto-save" id="suggested-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.playSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" />
+									<input type="checkbox" class="auto-save" id="suggested-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" />
 									<span class="slider round"></span>
 								</label>
 							</span>
@@ -247,7 +250,7 @@
 		</div>
 		<div class="section-container" id="bug" style="display: none">
 			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>Kindly report any bugs you discover to <span class="random-buttons" onclick="run.createNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span>.
+				<i class="ri-message-3-line"></i>Kindly report any bugs you discover to <span class="random-buttons" onclick="run.createCopyNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span>.
 			</p>
 			<p class="tab-information-2">-There have been some issues, which is why Mr Elusive is seeking feedback on errors or problems in order to address them promptly.</p>
 			<p class="tab-information-3">-Provide the website or any scripts related to the issues you are encountering.</p>
