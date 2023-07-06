@@ -48,7 +48,7 @@ class Functions {
 				document.querySelector("#loader").style.display = "none";
 				this.createNotification("There was an error, reloading the page");
 			}
-		}, 5000);
+		}, 3000);
 	}
 
 	setupSection() {
