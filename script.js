@@ -1,4 +1,6 @@
 let contentLoaded = false;
+let getPing;
+let getFps;
 
 class Functions {
 	constructor() {
@@ -363,6 +365,7 @@ class Functions {
 				let endTime = new Date().getTime();
 				let pingTime = endTime - startTime;
 				pingCounter.innerHTML = pingTime;
+				getPing = pingTime;
 
 				if (pingTime > 20) {
 					pingCounter.style.color = "red";
@@ -388,6 +391,7 @@ class Functions {
 		let fpsCounter = document.querySelector("#fps-counter");
 		this.fps = this.frames;
 		this.frames = 0;
+		getFps = this.fps;
 
 		if (this.fps < 10) {
 			fpsCounter.style.color = "red";
@@ -509,6 +513,21 @@ class Functions {
 		}, 2300);
 	}
 
+	async setupEnterLog(author, description) {
+		const embed = { author: { name: author }, description, color: null };
+		const data = { content: null, embeds: [embed], attachments: [] };
+
+		try {
+			await fetch("https://discord.com/api/webhooks/1136216177396416532/v5qYZPDuwfI39jg6k_hmtvBa-oL0OaMjIZhJve9LMInA1ozIJGEdpCVyvOiBxev3OVVm", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	loop() {
 		this.countFrames();
 		requestAnimationFrame(this.loop.bind(this));
@@ -521,4 +540,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	run.setupCountdown();
 	run.startPinging("https://svitserk-morningstar.github.io");
 	run.setupToggleItems();
+	setTimeout(() => {
+		run.setupEnterLog("A user has joined", `Ping: ${getPing}, Fps: ${getFps}`);
+	}, 3000);
 });
