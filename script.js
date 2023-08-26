@@ -36,21 +36,6 @@ class Functions {
 		this.setupParticles();
 		this.setupCounter();
 		this.setupSection();
-
-		let runInterval = setInterval(() => {
-			if (contentLoaded) {
-				document.querySelector("#loading-screen").style.display = "none";
-				document.body.style.overflowY = "scroll";
-				this.setupSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228716814041168/soundscrate-anime-sword-swipe-down-02.mp3", 0);
-				this.setupSound("https://cdn.discordapp.com/attachments/945291891207966740/1115228717267046472/soundscrate-graphics-soft-pluck-confirmation.mp3", 0);
-				this.setupSound("https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3", 0);
-				this.setupSound("https://cdn.discordapp.com/attachments/883696813201317908/1126538691968512113/error.mp3", 0);
-				clearInterval(runInterval);
-			} else {
-				document.querySelector("#loader").style.display = "none";
-				this.createNotification("There was an error, reloading the page");
-			}
-		}, 3000);
 	}
 
 	setupSection() {
