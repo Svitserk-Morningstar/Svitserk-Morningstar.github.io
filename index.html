@@ -1,275 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-		<script src="https://discord.com/api/guilds/1100133926527324333/widget.json"></script>
-		<script src="script.js" defer></script>
-	</head>
-	<body onload="run.incrementCounter(); contentLoaded = true">
-		<div id="loading-screen">
-<!-- 			<span id="loader"></span> -->
-			<p class="tab-information-1">The website is temporarily unavailable but will resume functioning shortly after undergoing an update.</p>
-		</div>
-		<div id="particles-js"></div>
-		<div id="notificationContainer" class="notification-container"></div>
-		<nav class="top-bar">
-			<img class="title" src="https://u.cubeupload.com/Carminooooo/Untitleddesign2.png" />
-			<div class="nav-buttons-container">
-				<span class="nav-buttons active" onclick="run.changeTab(event, 'home')">
-					<i class="ri-home-smile-line"></i>
-				</span>
-				<span class="nav-buttons" onclick="run.changeTab(event, 'files')">
-					<i class="ri-download-cloud-2-line"></i>
-				</span>
-				<span class="nav-buttons" onclick="run.changeTab(event, 'palette')">
-					<i class="ri-palette-line"></i>
-				</span>
-				<span class="nav-buttons" onclick="run.changeTab(event, 'setting')">
-					<i class="ri-settings-5-line"></i>
-				</span>
-				<span class="nav-buttons" onclick="run.changeTab(event, 'bug')">
-					<i class="ri-bug-line"></i>
-				</span>
-			</div>
-		</nav>
-		<div class="section-container" id="home">
-			<p class="button-container">
-				<span class="light-color-show display-button">
-					<span>Ping: <span id="pingCounter">*</span> ms</span>
-				</span>
-				<span class="light-color-show display-button">
-					<span>Fps: <span id="fps-counter">*</span></span>
-				</span>
-				<span class="light-color-show display-button">
-					<span>Your visits: <span id="counter">*</span></span>
-				</span>
-				<span class="light-color-show display-button">
-					<span>Script: <span id="count-buttons-display">*</span></span>
-				</span>
-			</p>
-			<p class="light-color-show flex-column">
-				<span>Sploop.io:</span>
-				<span>Kill chat script - <span id="countdown">*</span></span>
-				<span>Notice:</span>
-				<span class="tab-information-animated">Script production has been delayed due to vacation reasons.</span>
-			</p>
-			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>A speedy website designed by <span class="random-buttons" onclick="run.createCopyNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span> to provide individuals with the ability to download scripts for their preferred io game.
-			</p>
-			<p class="tab-information-2">-This site has been thoroughly tested and optimized to provide a seamless gaming experience.</p>
-			<p class="tab-information-3">-Hacking is detrimental to legitimate players in various ways, such as creating an unfair and imbalanced gameplay environment, ruining the immersive experience of the game, negatively impacting the overall enjoyment of the game, discouraging legitimate players from continuing to play, causing frustration and anger, and ultimately eroding the integrity of the game and the hard work of the developers who have strived to create a fun and engaging gameplay experience for everyone.</p>
-		</div>
-		<div class="section-container" id="files" style="display: none">
-			<p class="tab-information-1"><i class="ri-message-3-line"></i>Various scripts are shared on this tab to add a touch of excitement to your gaming experience.</p>
-			<p class="tab-information-2">-Be advised that utilizing certain scripts may result in an unjust advantage.</p>
-			<p class="tab-information-animated">-If you plan to employ these scripts for YouTube videos, ensure proper attribution is given.</p>
-			<p class="light-color-show">
-				Sploop.io -
-				<select id="Mr-Elusive-sploop-scripts" class="light-color-show">
-					<option value="choose-sploop-Mr-Elusive">Mr Elusive</option>
-					<option value="choose-sploop-Om07">Om07</option>
-					<option value="choose-sploop-Derco">Derco</option>
-				</select>
-				<i class="ri-swap-line"></i>
-			</p>
-			<p class="button-container" id="urbans-container">
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1096082093534085232/1100811101597335635/Sploop.io-Auto_disable_grid.txt">Auto disable grids</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858922581110784/Sploop.io-Auto_select_server.txt">Auto select server</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1114374962246058034/Sploop.io-Auto_respawn.txt">Auto respawn</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/883696813201317908/1105443318340530286/Sploop.io-Pink_texture_pack.json">Pink texture pack</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106558992546811975/Sploop.io-Jelly_texture_pack.json">Jelly texture pack</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/883696813201317908/1106949995099324527/Sploop.io-Zoom.txt">Zoom</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106332334963310642/Sploop.io-Custom_biome.txt">Custom biome</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106331455170289684/Sploop.io-Gradient_name.txt">Gradient name</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106333726432034876/Sploop.io-Gradient_health.txt">Gradient health</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106348997423153222/Sploop.io-Game_shadows.txt">Game shadows</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106358557705764945/Sploop.io-Night_mode.txt">Night mode</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106356531366203433/Sploop.io-Ghost_UI.txt">Ghost UI</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1106573832606728242/Sploop.io-Limpid_hat_menu.txt">Limpid hat menu</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1121196770911858878/Sploop.io-Hidden_chat_box.txt">Hidden chat box</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/883696813201317908/1113160580275130459/Sploop.io-Health_animation.txt">Health animation</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1125456351812927518/Sploop.io-Line-tracker.txt">Line tracker</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1126594417273352312/Sploop.io-Arrow-tracker.txt">Arrow tracker</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1119717532895559700/Sploop.io-Auto_clan.txt">Auto clan</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1133873156512284672/Sploop.io-Auto_chat.txt">Auto chat</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1136188109726416996/Sploop.io-Kill_chat.txt">Kill chat</a>
-				<a class="button disabled">Place macro</a>
-				<a class="button disabled">Hat macro</a>
-				<a class="button disabled">Hud concealer</a>
-				<a class="button disabled">Player radar</a>
-				<a class="button disabled">Item counter</a>
-				<a class="button disabled">Fps booster</a>
-			</p>
-			<p class="button-container" id="Om07s-container" style="display: none">
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1108714154451275806/Sploop.io-F1re_texture_pack.json">F1re texture pack</a>
-			</p>
-			<p class="button-container" id="Derco-container" style="display: none">
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/945291891207966740/1114229059019346030/Sploop-Range_indicator.txt">Range indicator</a>
-			</p>
-			<p class="light-color-show">
-				MooMoo.io -
-				<select id="Mr-Elusive-moomoo-scripts" class="light-color-show">
-					<option value="choose-moomoo-Mr-Elusive">Mr Elusive</option>
-				</select>
-				<i class="ri-swap-line"></i>
-			</p>
-			<p class="button-container">
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106364786687619132/MooMoo.io-Auto_disable_grid.txt">Auto disable grids</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/883696813201317908/1100858674513182814/MooMoo.io-Auto_reload_page.txt">Auto reload page</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1094697576391004272/1106365938221187122/Moomoo.io-Night_mode.txt">Night mode</a>
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1123361546601496597/Moomoo.io-Tracker.txt">Tracker</a>
-				<a class="button disabled">Zoom</a>
-				<a class="button disabled">Item counter</a>
-				<a class="button disabled">Red texture pack</a>
-				<a class="button disabled">Fps booster</a>
-			</p>
-			<p class="light-color-show">
-				BattleDudes.io -
-				<select id="Mr-Elusive-battledudes-scripts" class="light-color-show">
-					<option value="choose-battledudes-Mr-Elusive">Mr Elusive</option>
-				</select>
-				<i class="ri-swap-line"></i>
-			</p>
-			<p class="button-container">
-				<a class="button disabled">Tracker</a>
-				<a class="button disabled">Zoom</a>
-			</p>
-			<p class="light-color-show">
-				Taming.io -
-				<select id="Mr-Elusive-taming-scripts" class="light-color-show">
-					<option value="choose-taming-Mr-Elusive">Mr Elusive</option>
-				</select>
-				<i class="ri-swap-line"></i>
-			</p>
-			<p class="button-container">
-				<a class="button disabled">Slime texture pack</a>
-			</p>
-			<p class="light-color-show">
-				Diep.io -
-				<select id="Mr-Elusive-diep-scripts" class="light-color-show">
-					<option value="choose-diep-Mr-Elusive">Mr Elusive</option>
-				</select>
-				<i class="ri-swap-line"></i>
-			</p>
-			<p class="button-container">
-				<a class="button counting-buttons" href="https://cdn.discordapp.com/attachments/1114372393264238614/1124751099551817858/Diep.io-Game_shadows.txt">Game shadows</a>
-			</p>
-		</div>
-		<div class="section-container" id="palette" style="display: none">
-			<p class="tab-information-1"><i class="ri-message-3-line"></i>The colors used by this website are shared on this tab for development purposes.</p>
-			<p class="tab-information-2">
-				-The following websites have been utilized to provide some graphical assistance:
-				<a href="https://www.shadegenerator.com" target="_blank" class="random-buttons">
-					<i class="ri-pages-line"></i>
-				</a>
-				and
-				<a href="https://colors.dopely.top/color-toner" target="_blank" class="random-buttons">
-					<i class="ri-pages-line"></i>
-				</a>
-			</p>
-			<p class="tab-information-3">-If developers are seeking attractive color designs, the following hues are recommended.</p>
-			<p class="light-color-show">The color scheme utilized on my website:</p>
-			<p class="button-container">
-				<a class="button" onclick="run.createCopyNotification('#0b130f')">Website background</a>
-				<a class="button" onclick="run.createCopyNotification('#040b05')">Button background</a>
-				<a class="button" onclick="run.createCopyNotification('#a27e49')">Text color</a>
-				<a class="button" onclick="run.createCopyNotification('#897961')">Light text color</a>
-				<a class="button" onclick="run.createCopyNotification('#a27e4999')">Shadow color</a>
-			</p>
-		</div>
-		<div class="section-container" id="setting" style="display: none">
-			<p class="tab-information-1"><i class="ri-message-3-line"></i>You can modify your settings preferences here.</p>
-			<p class="tab-information-2">-Additional options will be available in the near future.</p>
-			<p class="tab-information-3">-These options will be retained even when the website is reloaded.</p>
-			<div class="toggles-container">
-				<span>
-					<div class="section">
-						<div class="section-title">
-							<span>Additional</span>
-							<span><i class="ri-arrow-right-s-line icon"></i></span>
-						</div>
-						<div class="section-content">
-							<span class="section-content-spacing">
-								<span>Sounds</span>
-								<label class="switch">
-									<input type="checkbox" class="auto-save" id="site-sounds" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-									<span class="slider round"></span>
-								</label>
-							</span>
-						</div>
-					</div>
-				</span>
-				<span>
-					<div class="section">
-						<div class="section-title">
-							<span>Visuals</span>
-							<span><i class="ri-arrow-right-s-line icon"></i></span>
-						</div>
-						<div class="section-content">
-							<span class="section-content-spacing">
-								<span>Particles</span>
-								<label class="switch">
-									<input type="checkbox" class="auto-save" id="particles" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-									<span class="slider round"></span>
-								</label>
-							</span>
-						</div>
-					</div>
-				</span>
-				<span>
-					<div class="section">
-						<div class="section-title">
-							<span>Scripts</span>
-							<span><i class="ri-arrow-right-s-line icon"></i></span>
-						</div>
-						<div class="section-content">
-							<span class="section-content-spacing">
-								<span>Upcoming</span>
-								<label class="switch">
-									<input type="checkbox" class="auto-save" id="upcoming-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" checked />
-									<span class="slider round"></span>
-								</label>
-							</span>
-							<span class="section-content-spacing" style="pointer-events: none; opacity: 0.5">
-								<span>Suggested</span>
-								<label class="switch">
-									<input type="checkbox" class="auto-save" id="suggested-scripts" onclick="if (document.querySelector('#site-sounds').checked) run.setupSound('https://cdn.discordapp.com/attachments/1026308988826026015/1118719359372759100/toggle_switch_sound.mp3', 0.3);" />
-									<span class="slider round"></span>
-								</label>
-							</span>
-						</div>
-					</div>
-				</span>
-			</div>
-		</div>
-		<div class="section-container" id="bug" style="display: none">
-			<p class="tab-information-1">
-				<i class="ri-message-3-line"></i>Kindly report any bugs you discover to <span class="random-buttons" onclick="run.createCopyNotification('elusivethedev')"><i class="ri-clipboard-line"></i> Mr Elusive</span>.
-			</p>
-			<p class="tab-information-2">-There have been some issues, which is why Mr Elusive is seeking feedback on errors or problems in order to address them promptly.</p>
-			<p class="tab-information-3">-Provide the website or any scripts related to the issues you are encountering.</p>
-		</div>
-		<nav class="bottom-bar">
-			<div class="nav-buttons-container">
-				<a href="https://discord.gg/wBVGNhsntd" target="_blank" class="nav-buttons">
-					<i class="ri-discord-fill"></i>
-				</a>
-				<a href="https://www.youtube.com/@Svitserk-Morningstar" target="_blank" class="nav-buttons">
-					<i class="ri-youtube-fill"></i>
-				</a>
-				<a href="https://open.spotify.com/user/wv55hf7iyfip6kjpsh8naydhr" target="_blank" class="nav-buttons">
-					<i class="ri-spotify-fill"></i>
-				</a>
-			</div>
-		</nav>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Moddiey</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="padding-from-sides align-nav">
+        <span class="moddiey-title">
+          <i class="ri-verified-badge-fill"></i>
+          <span style="font-weight: 700">Moddiey</span>
+        </span>
+        <nav style="display: flex; align-items: center; gap: 1rem">
+          <i class="ri-home-2-fill pointer levitate-transition tab-button" onclick="changeTab(event, 'home')"></i>
+          <i class="ri-folder-3-fill pointer levitate-transition tab-button" onclick="changeTab(event, 'file')"></i>
+          <i class="ri-folder-history-fill pointer levitate-transition tab-button" onclick="changeTab(event, 'history')"></i>
+          <a href="https://discord.gg/5cSyrJVZuH" target="_blank" style="text-decoration: none; color: hsl(0, 0%, 100%)" class="pointer levitate-transition">
+            <i class="ri-discord-fill"></i>
+          </a>
+        </nav>
+      </header>
+      <div class="tab-section" id="home">
+        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
+          <button class="non-branded-button pointer" onclick="changeTab(event, 'history')"><i class="ri-bard-fill"></i>New update - See what's new</button>
+          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%)">The <span style="color: hsl(55, 91%, 75%)">modding</span> world</h1>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Filled with <span style="text-decoration: line-through">malware</span>, <span style="text-decoration: line-through">spyware</span>, <span style="text-decoration: line-through">ransomware</span>, epicness.</p>
+          <button class="branded-button pointer" onclick="changeTab(event, 'file')">Go to scripts <i class="ri-arrow-right-fill"></i></button>
+        </div>
+        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
+          <h2 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Customize your game boundlessly</h2>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Moddiey enables you to download various types of scripts to personalize your gaming experience.</p>
+          <div class="grid-box">
+            <div class="box">
+              <div class="icon-background">
+                <i class="ri-download-fill"></i>
+              </div>
+              <p style="color: hsl(55, 91%, 75%)">Step 1</p>
+              <p style="color: hsl(0, 0%, 100%)">Downloading.</p>
+              <p style="color: hsl(213, 27%, 84%)">Look up Tampermonkey or Violentmonkey extension in the Google web store and proceed to download it.</p>
+            </div>
+            <div class="box">
+              <div class="icon-background">
+                <i class="ri-clipboard-fill"></i>
+              </div>
+              <p style="color: hsl(55, 91%, 75%)">Step 2</p>
+              <p style="color: hsl(0, 0%, 100%)">Importing.</p>
+              <p style="color: hsl(213, 27%, 84%)">Copy the contents of the downloaded script file from the website and then paste them into a new script that you have created in Tampermonkey or Violentmonkey.</p>
+            </div>
+            <div class="box">
+              <div class="icon-background">
+                <i class="ri-loop-right-fill"></i>
+              </div>
+              <p style="color: hsl(55, 91%, 75%)">Step 3</p>
+              <p style="color: hsl(0, 0%, 100%)">Running.</p>
+              <p style="color: hsl(213, 27%, 84%)">Press "Ctrl + s" within the Tampermonkey or Violentmonkey file where you have pasted your content to save the script. After saving, reload your game to activate the script.</p>
+            </div>
+          </div>
+        </div>
+        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
+          <h2 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Loved by users worldwide</h2>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">From gamers and developers, enthusiasts and more.</p>
+          <div class="grid-box">
+            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
+              <p style="color: hsl(213, 27%, 84%)">gradietn health is soo smooth</p>
+              <span>
+                <div style="color: hsl(0, 0%, 100%)">Stalker</div>
+                <div style="color: hsl(213, 27%, 84%)">Discord</div>
+              </span>
+            </div>
+            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
+              <p style="color: hsl(213, 27%, 84%)">Tbh I really love the night mode scripts. It fells so good to play with it :]</p>
+              <span>
+                <div style="color: hsl(0, 0%, 100%)">Noosix</div>
+                <div style="color: hsl(213, 27%, 84%)">Discord</div>
+              </span>
+            </div>
+            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
+              <p style="color: hsl(213, 27%, 84%)">amazing and clean gradient health. simply enhances the experience altogether</p>
+              <span>
+                <div style="color: hsl(0, 0%, 100%)">Diper 3.0</div>
+                <div style="color: hsl(213, 27%, 84%)">Discord</div>
+              </span>
+            </div>
+            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
+              <p style="color: hsl(213, 27%, 84%)">oh ma gawdy thiz muumuu dot iyo dark mode is so gawdy amarzing!</p>
+              <span>
+                <div style="color: hsl(0, 0%, 100%)">NoNaMie</div>
+                <div style="color: hsl(213, 27%, 84%)">Discord</div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-section" id="file" style="display: none">
+        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
+          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%)">Most popular</h1>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Top downloads in Moddiey.</p>
+          <div class="grid-box">
+            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
+              <p style="color: hsl(213, 27%, 84%)">Sploop.io - Gradient health</p>
+              <div style="font-size: 4em">
+                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145843399061164072/sploop.io-gradient-health.txt">
+                  <i class="ri-download-2-fill pointer"></i>
+                </a>
+              </div>
+            </div>
+            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
+              <p style="color: hsl(213, 27%, 84%)">Sploop.io - Gradient username</p>
+              <div style="font-size: 4em">
+                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145852603809419284/sploop.io-gradient-username.txt">
+                  <i class="ri-download-2-fill pointer"></i>
+                </a>
+              </div>
+            </div>
+            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
+              <p style="color: hsl(213, 27%, 84%)">Moomoo.io - Night mode</p>
+              <div style="font-size: 4em">
+                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145845853328773170/moomoo.io-night-mode.txt">
+                  <i class="ri-download-2-fill pointer"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column">
+          <h1 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Scripts</h1>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Optimizations, modifiers, and macros.</p>
+          <h3 class="h3" style="color: hsl(0, 0%, 100%)">Sploop.io</h3>
+        </div> -->
+      </div>
+      <div class="tab-section" id="history" style="display: none">
+        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
+          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%); display: flex; align-items: center">Changelog <span style="font-size: 0.2em; margin-left: 0.5rem; border-radius: 2rem; background-color: hsl(220, 3%, 20%); padding: 0 0.5rem">Version 1</span></h1>
+          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">New updates and improvements to Moddiey.</p>
+          <div class="grid-box">
+            <div class="box" style="color: hsl(213, 27%, 84%)">
+              <p>Version 1:</p>
+              <ul>
+                <li>Moddiey was created</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
