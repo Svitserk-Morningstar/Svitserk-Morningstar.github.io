@@ -57,8 +57,8 @@ body {
   display: flex;
   align-items: center;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .pointer {
@@ -68,6 +68,7 @@ body {
 .levitate-transition {
   transition: transform 300ms ease;
 }
+
 .levitate-transition:hover {
   transform: translateY(-5%);
 }
@@ -83,9 +84,10 @@ body {
   font-weight: 700;
   transition: background-color 300ms ease;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
+
 .non-branded-button:hover {
   background-color: hsl(55, 91%, 75%);
 }
@@ -101,15 +103,15 @@ body {
   font-weight: 700;
   transition: background-color 300ms ease;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .grid-box {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
   width: 100%;
   row-gap: 1rem;
 }
@@ -126,6 +128,7 @@ body {
   box-shadow: none;
   transition: all 300ms ease;
 }
+
 .box.animated:hover {
   transform: translate(3px, -3px);
   box-shadow: -6px 6px 0 0 hsl(220, 9%, 14%);
