@@ -130,8 +130,8 @@ body {
 }
 
 .box.animated:hover {
-  transform: translate(3px, -3px);
-  box-shadow: -6px 6px 0 0 hsl(220, 9%, 14%);
+  transform: translate(0.1875rem, -0.1875rem);
+  box-shadow: -0.375rem 0.375rem 0 0 hsl(220, 9%, 14%);
 }
 
 .icon-background {
@@ -144,52 +144,68 @@ body {
   place-content: center;
 }
 
-@media (max-width: 1820px) {
+.tab-section {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.625rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 113.75rem) {
   .padding-from-sides {
     padding: 3rem 22.5rem;
   }
 }
-@media (max-width: 1720px) {
+@media (max-width: 107.5rem) {
   .padding-from-sides {
     padding: 3rem 20rem;
   }
 }
-@media (max-width: 1620px) {
+@media (max-width: 101.25rem) {
   .padding-from-sides {
     padding: 3rem 17.5rem;
   }
 }
-@media (max-width: 1520px) {
+@media (max-width: 95rem) {
   .padding-from-sides {
     padding: 3rem 15rem;
   }
 }
-@media (max-width: 1420px) {
+@media (max-width: 88.75rem) {
   .padding-from-sides {
     padding: 3rem 12.5rem;
   }
 }
-@media (max-width: 1320px) {
+@media (max-width: 82.5rem) {
   .padding-from-sides {
     padding: 3rem 10rem;
   }
 }
-@media (max-width: 1220px) {
+@media (max-width: 76.25rem) {
   .padding-from-sides {
     padding: 3rem 7.5rem;
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 70rem) {
   .padding-from-sides {
     padding: 3rem 5rem;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: 63.75rem) {
   .padding-from-sides {
     padding: 3rem 2.5rem;
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 57.5rem) {
   .h1 {
     font-size: 3.25em;
   }
@@ -197,7 +213,7 @@ body {
     font-size: 1.75em;
   }
 }
-@media (max-width: 520px) {
+@media (max-width: 32.5rem) {
   .padding-from-sides {
     padding: 3rem 0rem;
   }
