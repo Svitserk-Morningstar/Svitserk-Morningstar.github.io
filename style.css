@@ -12,6 +12,10 @@ body {
   overflow-y: scroll;
 }
 
+* {
+  -webkit-user-drag: none;
+}
+
 .app {
   display: flex;
   flex-direction: column;
