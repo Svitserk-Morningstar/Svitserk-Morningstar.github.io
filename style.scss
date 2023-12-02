@@ -1,0 +1,338 @@
+@mixin navButtonCss {
+  border: none;
+  outline: none;
+  background-color: hsl(223, 20%, 7%);
+  flex-basis: 6rem;
+  box-shadow: -0.0625rem 0rem 0rem 0rem hsla(220, 10%, 17%, 0.5);
+  border-bottom: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+  color: hsl(220, 6%, 30%);
+  font-weight: 600;
+  transition: all 240ms ease;
+}
+
+@mixin gridIconBackground {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: hsl(346, 92%, 64%);
+  border-radius: 0.75rem;
+  display: grid;
+  place-content: center;
+  color: hsl(210, 40%, 96%);
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+html,
+body {
+  background-color: hsl(223, 20%, 7%);
+  font-family: "Karla", sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  & ::selection {
+    color: hsl(346, 92%, 64%);
+    background-color: hsl(346, 92%, 64%, 0.1);
+  }
+}
+
+body {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(223, 20%, 7%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(225, 17%, 9%);
+  border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(223, 20%, 7%);
+}
+
+div.holder📁 {
+  display: flex;
+  flex-direction: column;
+}
+
+nav.nav📁 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: hsl(225, 17%, 9%);
+  flex-basis: 6rem;
+  border-bottom: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+
+  & div.nav-split📁 {
+    display: flex;
+    flex-direction: column;
+
+    & div:first-child {
+      display: flex;
+      flex-basis: 2.5rem;
+      background-color: hsl(223, 20%, 7%);
+
+      & button.button📁 {
+        @include navButtonCss();
+
+        &:hover {
+          background-color: hsl(225, 17%, 9%);
+          border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
+          color: hsl(222, 5%, 62%);
+        }
+
+        &.active📁 {
+          background-color: hsl(225, 17%, 9%);
+          border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
+          color: hsl(210, 40%, 96%);
+        }
+      }
+
+      & a.button📁 {
+        @include navButtonCss();
+        display: grid;
+        place-content: center;
+        text-decoration: none;
+
+        &:hover {
+          background-color: hsl(225, 17%, 9%);
+          border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
+          color: hsl(222, 5%, 62%);
+        }
+
+        &.active📁 {
+          background-color: hsl(225, 17%, 9%);
+          border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
+          color: hsl(210, 40%, 96%);
+        }
+      }
+    }
+  }
+}
+
+div.app📁 {
+  background: radial-gradient(50% 50% at 100% -0%, hsl(346, 92%, 64%, 0.1) 0%, rgba(36, 19, 27, 0) 100%), radial-gradient(50% 50% at 0% 0%, hsl(346, 92%, 64%, 0.1) 0%, rgba(36, 19, 27, 0) 100%);
+  background-size: 100% 30rem;
+  background-repeat: no-repeat;
+
+  & div.section📁 {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding: 3rem 25rem;
+    transition: all 240ms ease;
+    text-align: center;
+
+    & span.text-span📁 {
+      & .little-rounded-card📁 {
+        background-color: hsl(225, 17%, 9%);
+        border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+        border-radius: 0.75rem;
+        padding: 0 0.6rem;
+        color: hsl(346, 92%, 64%);
+      }
+
+      & h1 {
+        color: hsl(210, 40%, 96%);
+        font-weight: 800;
+        font-size: 3.75em;
+        transition: all 240ms ease;
+
+        & .highlight📁 {
+          color: hsl(346, 92%, 64%);
+        }
+      }
+
+      & h2 {
+        color: hsl(210, 40%, 96%);
+        font-weight: 600;
+        font-size: 2.25em;
+        transition: all 240ms ease;
+      }
+
+      & p {
+        color: hsla(204, 100%, 90%, 0.8);
+      }
+
+      & button.button📁 {
+        outline: none;
+        background-color: hsl(225, 17%, 9%);
+        border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+        padding: 0 1.5rem;
+        transition: all 240ms ease;
+        color: hsl(210, 40%, 96%);
+        border-radius: 0.5rem;
+
+        &:first-child:hover {
+          background-color: hsla(220, 10%, 17%, 0.5);
+        }
+
+        &:last-child {
+          background-color: hsla(220, 10%, 17%, 0.5);
+
+          &:hover {
+            background-color: hsl(225, 17%, 9%);
+          }
+        }
+      }
+    }
+
+    div.grid-layout📁 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      width: 100%;
+      column-gap: 2rem;
+      row-gap: 2rem;
+      gap: 2rem;
+
+      div.grid📁 {
+        background-color: hsl(225, 17%, 9%);
+        border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+        padding: 1.5rem;
+        transform: scale(1);
+        transition: all 240ms ease;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 0.5rem;
+
+        &:hover {
+          transform: scale(1.125);
+        }
+
+        & div.icon-background📁 {
+          @include gridIconBackground();
+        }
+
+        & a.icon-background📁 {
+          @include gridIconBackground();
+          transition: all 240ms ease;
+          transform: scale(1);
+
+          &:hover {
+            transform: scale(1.125);
+          }
+        }
+
+        & span.title📁 {
+          color: hsl(346, 92%, 64%);
+          margin-top: 1rem;
+          font-size: 0.875em;
+          line-height: 1.25rem;
+        }
+
+        & span.sub-title📁 {
+          color: hsl(210, 40%, 96%);
+          font-size: 1.25rem;
+        }
+
+        & span.description📁 {
+          color: hsl(213, 27%, 84%);
+          font-size: 0.875em;
+          line-height: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 113.75rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 22.5rem;
+    }
+  }
+}
+
+@media (max-width: 107.5rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 20rem;
+    }
+  }
+}
+
+@media (max-width: 101.25rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 17.5rem;
+    }
+  }
+}
+
+@media (max-width: 95rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 15rem;
+    }
+  }
+}
+
+@media (max-width: 88.75rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 12.5rem;
+    }
+  }
+}
+
+@media (max-width: 82.5rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 10rem;
+    }
+  }
+}
+
+@media (max-width: 76.25rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 7.5rem;
+    }
+  }
+}
+
+@media (max-width: 70rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 5rem;
+    }
+  }
+}
+
+@media (max-width: 63.75rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 32.5rem) {
+  div.app📁 {
+    & div.section📁 {
+      padding: 3rem 0rem;
+    }
+  }
+}
+
+@media (max-width: 57.5rem) {
+  div.app📁 div.section📁 span.text-span📁 h1 {
+    font-size: 3em;
+  }
+  div.app📁 div.section📁 span.text-span📁 h2 {
+    font-size: 1.5em;
+  }
+}

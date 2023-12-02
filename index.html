@@ -1,236 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moddiey</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://u.cubeupload.com/Elusive/Untitleddesign1.png" />
-    <script src="script.js" defer></script>
-    <title>Official Moddiey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="app">
-      <header class="padding-from-sides align-nav">
-        <span class="moddiey-title">
-          <img src="https://u.cubeupload.com/Elusive/Untitleddesign1.png" height="50px" width="50px" alt="Moddiey" style="font-weight: 700" draggable="false" />
-        </span>
-        <nav style="display: flex; align-items: center; gap: 1rem">
-          <i class="ri-home-2-fill pointer levitate-transition tab-button active" onclick="changeTab(event, 'home')"></i>
-          <i class="ri-folder-3-fill pointer levitate-transition tab-button" onclick="changeTab(event, 'file')"></i>
-          <i class="ri-folder-history-fill pointer levitate-transition tab-button" onclick="changeTab(event, 'history')"></i>
-          <a href="https://discord.gg/5cSyrJVZuH" target="_blank" style="text-decoration: none; color: hsl(0, 0%, 100%)" class="pointer levitate-transition">
-            <i class="ri-discord-fill"></i>
-          </a>
-        </nav>
-      </header>
-      <div class="tab-section" id="home">
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
-          <button class="non-branded-button pointer" onclick="changeTab(event, 'history')"><i class="ri-bard-fill"></i>New update - See what's new</button>
-          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%)">The <span style="color: hsl(55, 91%, 75%)">modding</span> world</h1>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Filled with <span style="text-decoration: line-through">malware</span>, <span style="text-decoration: line-through">spyware</span>, <span style="text-decoration: line-through">ransomware</span>, epicness.</p>
-          <button class="branded-button pointer" onclick="changeTab(event, 'file')">Go to scripts <i class="ri-arrow-right-fill"></i></button>
-        </div>
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
-          <h2 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Customize your game boundlessly</h2>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Moddiey enables you to download various types of scripts to personalize your gaming experience.</p>
-          <div class="grid-box">
-            <div class="box">
-              <div class="icon-background">
-                <i class="ri-download-fill"></i>
-              </div>
-              <p style="color: hsl(55, 91%, 75%)">Step 1</p>
-              <p style="color: hsl(0, 0%, 100%)">Downloading.</p>
-              <p style="color: hsl(213, 27%, 84%)">Look up Tampermonkey or Violentmonkey extension in the Google web store and proceed to download it.</p>
-            </div>
-            <div class="box">
-              <div class="icon-background">
-                <i class="ri-clipboard-fill"></i>
-              </div>
-              <p style="color: hsl(55, 91%, 75%)">Step 2</p>
-              <p style="color: hsl(0, 0%, 100%)">Importing.</p>
-              <p style="color: hsl(213, 27%, 84%)">Copy the contents of the downloaded script file from the website and then paste them into a new script that you have created in Tampermonkey or Violentmonkey.</p>
-            </div>
-            <div class="box">
-              <div class="icon-background">
-                <i class="ri-loop-right-fill"></i>
-              </div>
-              <p style="color: hsl(55, 91%, 75%)">Step 3</p>
-              <p style="color: hsl(0, 0%, 100%)">Running.</p>
-              <p style="color: hsl(213, 27%, 84%)">Press "Ctrl + s" within the Tampermonkey or Violentmonkey file where you have pasted your content to save the script. After saving, reload your game to activate the script.</p>
-            </div>
+    <div class="holder📁">
+      <nav class="nav📁">
+        <div class="nav-split📁">
+          <div>
+            <button class="button📁 active📁" onclick="changeTab(event, 'home📁')">Home</button>
+            <button class="button📁" onclick="changeTab(event, 'scripts📁')" id="scripts-button📁">Scripts</button>
+            <button class="button📁" onclick="changeTab(event, 'updates📁')" id="updates-button📁">Updates</button>
+            <a href="https://discord.gg/etsNNaTZWH" target="_blank" class="button📁">Discord</a>
           </div>
         </div>
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
-          <h2 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Loved by users worldwide</h2>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">From gamers and developers, enthusiasts and more.</p>
-          <div class="grid-box">
-            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
-              <p style="color: hsl(213, 27%, 84%)">gradietn health is soo smooth</p>
-              <span>
-                <div style="color: hsl(0, 0%, 100%)">Stalker</div>
-                <div style="color: hsl(213, 27%, 84%)">Discord</div>
-              </span>
-            </div>
-            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
-              <p style="color: hsl(213, 27%, 84%)">Tbh I really love the night mode scripts. It fells so good to play with it :]</p>
-              <span>
-                <div style="color: hsl(0, 0%, 100%)">Noosix</div>
-                <div style="color: hsl(213, 27%, 84%)">Discord</div>
-              </span>
-            </div>
-            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
-              <p style="color: hsl(213, 27%, 84%)">amazing and clean gradient health. simply enhances the experience altogether</p>
-              <span>
-                <div style="color: hsl(0, 0%, 100%)">Diper 3.0</div>
-                <div style="color: hsl(213, 27%, 84%)">Discord</div>
-              </span>
-            </div>
-            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
-              <p style="color: hsl(213, 27%, 84%)">oh ma gawdy thiz muumuu dot iyo dark mode is so gawdy amarzing!</p>
-              <span>
-                <div style="color: hsl(0, 0%, 100%)">NoNaMie</div>
-                <div style="color: hsl(213, 27%, 84%)">Discord</div>
-              </span>
-            </div>
-            <div class="box" style="display: flex; flex-direction: column; justify-content: space-between">
-              <p style="color: hsl(213, 27%, 84%)">gradient health soo smooth</p>
-              <span>
-                <div style="color: hsl(0, 0%, 100%)">ilyax</div>
-                <div style="color: hsl(213, 27%, 84%)">Discord</div>
-              </span>
+      </nav>
+      <div class="app📁">
+        <div class="section📁" id="home📁">
+          <span class="text-span📁">
+            <button class="button📁" onclick="document.querySelector('#updates-button📁').click()"><span>Updates</span><i class="ri-arrow-right-line"></i></button>
+            <h1>The <span class="highlight📁">scripting</span> world</h1>
+            <p>Exploiting the Digital Realm by using up-to-date scripts by Moddiey.</p>
+            <button class="button📁" onclick="document.querySelector('#scripts-button📁').click()"><span>Scripts</span><i class="ri-arrow-right-line"></i></button>
+          </span>
+          <div>
+            <span class="text-span📁">
+              <h2>Switch up your game</h2>
+              <p>Gain an advantage and impress your friends.</p>
+            </span>
+            <div class="grid-layout📁">
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-eye-line"></i>
+                </div>
+                <span class="title📁">Visuals</span>
+                <span class="sub-title📁">Customize your game with limitless possibilities.</span>
+                <span class="description📁">Biomes, healthbars, HUD, players, animals and weapons.</span>
+              </div>
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-computer-line"></i>
+                </div>
+                <span class="title📁">Boosters</span>
+                <span class="sub-title📁">Improve your game / computer performance.</span>
+                <span class="description📁">Reduce latency and prevent lag spikes.</span>
+              </div>
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-skull-line"></i>
+                </div>
+                <span class="title📁">Friendly hacks</span>
+                <span class="sub-title📁">Balanced hacks to make fights fair.</span>
+                <span class="description📁">Websocket, hat macro, place macro and more.</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="tab-section" id="file" style="display: none">
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
-          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%)">Most popular</h1>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Top downloads in Moddiey.</p>
-          <div class="grid-box">
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Sploop.io - Gradient health</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145843399061164072/sploop.io-gradient-health.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
+          <div>
+            <span class="text-span📁">
+              <h2>Loved by users worldwide</h2>
+              <p>From gamers and developers, enthusiasts and more.</p>
+            </span>
+            <div class="grid-layout📁">
+              <div class="grid📁" style="display: flex; flex-direction: column; justify-content: space-between">
+                <p style="color: hsl(213, 27%, 84%)">gradietn health is soo smooth</p>
+                <span>
+                  <div style="color: hsl(0, 0%, 100%)">Stalker</div>
+                  <div style="color: hsl(213, 27%, 84%)">Discord</div>
+                </span>
               </div>
-            </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Sploop.io - Gradient username</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145852603809419284/sploop.io-gradient-username.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
+              <div class="grid📁" style="display: flex; flex-direction: column; justify-content: space-between">
+                <p style="color: hsl(213, 27%, 84%)">Tbh I really love the night mode scripts. It fells so good to play with it :]</p>
+                <span>
+                  <div style="color: hsl(0, 0%, 100%)">Noosix</div>
+                  <div style="color: hsl(213, 27%, 84%)">Discord</div>
+                </span>
               </div>
-            </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Moomoo.io - Night mode</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1145845853328773170/moomoo.io-night-mode.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
+              <div class="grid📁" style="display: flex; flex-direction: column; justify-content: space-between">
+                <p style="color: hsl(213, 27%, 84%)">amazing and clean gradient health. simply enhances the experience altogether</p>
+                <span>
+                  <div style="color: hsl(0, 0%, 100%)">Diper 3.0</div>
+                  <div style="color: hsl(213, 27%, 84%)">Discord</div>
+                </span>
+              </div>
+              <div class="grid📁" style="display: flex; flex-direction: column; justify-content: space-between">
+                <p style="color: hsl(213, 27%, 84%)">oh ma gawdy thiz muumuu dot iyo dark mode is so gawdy amarzing!</p>
+                <span>
+                  <div style="color: hsl(0, 0%, 100%)">NoNaMie</div>
+                  <div style="color: hsl(213, 27%, 84%)">Discord</div>
+                </span>
+              </div>
+              <div class="grid📁" style="display: flex; flex-direction: column; justify-content: space-between">
+                <p style="color: hsl(213, 27%, 84%)">gradient health soo smooth</p>
+                <span>
+                  <div style="color: hsl(0, 0%, 100%)">ilyax</div>
+                  <div style="color: hsl(213, 27%, 84%)">Discord</div>
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column">
-          <h1 class="h2 text-align" style="color: hsl(0, 0%, 100%)">Scripts</h1>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">Optimizations, modifiers, and macros.</p>
-          <h3 class="h3" style="color: hsl(0, 0%, 100%)">Sploop.io</h3>
-          <div class="grid-box">
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Auto chat</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1148970654956265492/sploop.io-auto-chat.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
+        <div class="section📁" id="scripts📁" style="display: none">
+          <div>
+            <span class="text-span📁">
+              <h1>Running scripts</h1>
+              <p>Fast and secure extensions to run your scripts.</p>
+            </span>
+            <div class="grid-layout📁">
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-search-2-line"></i>
+                </div>
+                <span class="title📁">Download</span>
+                <span class="sub-title📁">Click on <a href="https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag" target="_blank">ME</a> and click "Add to Chrome" on the Chrome Web Store.</span>
+                <span class="description📁">Violentmonkey, a safe script runner for your browser.</span>
+              </div>
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-settings-5-line"></i>
+                </div>
+                <span class="title📁">Dashboard</span>
+                <span class="sub-title📁">Click on the Violentmonkey icon and then click on the settings icon.</span>
+                <span class="description📁">Taking you to your dashboard where all your scripts are located.</span>
+              </div>
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-add-line"></i>
+                </div>
+                <span class="title📁">Adding</span>
+                <span class="sub-title📁">Click on the + icon and then click on new. Copy and paste the script. Ctrl + S to save.</span>
+                <span class="description📁">Give yourself a high five for creating your first ever script!</span>
               </div>
             </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Kill chat</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1148973244620230727/sploop.io-kill-chat.txt">
-                  <i class="ri-download-2-fill pointer"></i>
+          </div>
+          <div>
+            <span class="text-span📁">
+              <h2>MOOMOO.io</h2>
+              <p>Moo Moo</p>
+            </span>
+            <div class="grid-layout📁">
+              <div class="grid📁">
+                <a href="https://cdn.discordapp.com/attachments/821845455557886024/1180638595678228561/MOOMOO.io-DayNight_cycle.txt?ex=657e2660&is=656bb160&hm=bbc8611e3d953630d55a63ce2c1e15c732be8fe03064f13d5124fe16749aeb5f&" target="_blank" class="icon-background📁">
+                  <i class="ri-download-line"></i>
                 </a>
-              </div>
-            </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Zoom</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1151128999368605696/sploop.io-zoom.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
-              </div>
-            </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Grid remover</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1140947205197398016/1151832448984944680/sploop.io-grid-remover.txt">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
-              </div>
-            </div>
-            <div class="box animated" style="display: flex; flex-direction: column; align-items: center">
-              <p style="color: hsl(213, 27%, 84%)">Keystrokes(bundle)</p>
-              <div style="font-size: 4em">
-                <a style="text-decoration: none; color: hsl(213, 27%, 84%)" href="https://cdn.discordapp.com/attachments/1125435411238490113/1173305598687850517/sploop.io-keystrokes.txt?ex=656378fd&is=655103fd&hm=1438617387a40d7f6b757c87081f33d226447c7e9df8806caa7a23904807c45e&">
-                  <i class="ri-download-2-fill pointer"></i>
-                </a>
+                <span class="title📁">DayNight cycle</span>
+                <span class="description📁">Gradually transitions between day and night time.</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tab-section" id="history" style="display: none">
-        <div class="padding-from-sides margin-from-top" style="display: flex; flex-direction: column; align-items: center">
-          <h1 class="h1 text-align" style="color: hsl(0, 0%, 100%); display: flex; align-items: center">Changelog <span style="font-size: 0.2em; margin-left: 0.5rem; border-radius: 2rem; background-color: hsl(220, 3%, 20%); padding: 0 0.5rem">Version 0.6</span></h1>
-          <p class="text-align" style="color: hsla(204, 100%, 90%, 0.8)">New updates and improvements to Moddiey.</p>
-          <div class="grid-box">
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.1:</p>
-              <ul>
-                <li>Moddiey redesigned</li>
-              </ul>
-            </div>
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.2:</p>
-              <ul>
-                <li>Sploop.io auto chat added</li>
-                <li>Sploop.io kill chat added</li>
-              </ul>
-            </div>
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.3:</p>
-              <ul>
-                <li>Moddiey animations added</li>
-              </ul>
-            </div>
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.4:</p>
-              <ul>
-                <li>Sploop.io zoom added</li>
-              </ul>
-            </div>
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.5:</p>
-              <ul>
-                <li>Moddiey logo added</li>
-                <li>Sploop.io grid remover added</li>
-              </ul>
-            </div>
-            <div class="box" style="color: hsl(213, 27%, 84%)">
-              <p>Version 0.6:</p>
-              <ul>
-                <li>Sploop.io keystrokes(bundle) added</li>
-              </ul>
+        <div class="section📁" id="updates📁" style="display: none">
+          <div>
+            <span class="text-span📁">
+              <span style="display: flex; justify-content: center; align-items: center">
+                <h1>Changelog</h1>
+                <span class="little-rounded-card📁">v0.2</span>
+              </span>
+              <p>Keep yourself updated on the latest releases.</p>
+            </span>
+            <div class="grid-layout📁">
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-loop-right-fill"></i>
+                </div>
+                <span class="title📁">Website update</span>
+                <span class="sub-title📁">Colors</span>
+                <span class="description📁">Version 0.1</span>
+              </div>
+              <div class="grid📁">
+                <div class="icon-background📁">
+                  <i class="ri-add-line"></i>
+                </div>
+                <span class="title📁">Script added</span>
+                <span class="sub-title📁">DayNight cycle</span>
+                <span class="description📁">Version 0.2</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
