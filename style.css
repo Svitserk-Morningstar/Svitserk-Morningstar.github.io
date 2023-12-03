@@ -156,15 +156,15 @@ div.app📁 div.section📁 span.text-span📁 button.button📁 {
   transition: all 240ms ease;
   color: hsl(210, 40%, 96%);
   border-radius: 0.5rem;
+  height: 3rem;
+  transform: scale(1);
 }
-div.app📁 div.section📁 span.text-span📁 button.button📁:first-child:hover {
+div.app📁 div.section📁 span.text-span📁 button.button📁 i {
+  color: hsl(346, 92%, 64%);
+}
+div.app📁 div.section📁 span.text-span📁 button.button📁:hover {
   background-color: hsla(220, 10%, 17%, 0.5);
-}
-div.app📁 div.section📁 span.text-span📁 button.button📁:last-child {
-  background-color: hsla(220, 10%, 17%, 0.5);
-}
-div.app📁 div.section📁 span.text-span📁 button.button📁:last-child:hover {
-  background-color: hsl(225, 17%, 9%);
+  transform: scale(1.125);
 }
 div.app📁 div.section📁 div.grid-layout📁 {
   display: grid;
@@ -213,9 +213,11 @@ div.app📁 div.section📁 div.grid-layout📁 div.grid📁 a.icon-background�
   text-decoration: none;
   transition: all 240ms ease;
   transform: scale(1);
+  filter: brightness(100%);
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 a.icon-background📁:hover {
   transform: scale(1.125);
+  filter: brightness(65%);
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 span.title📁 {
   color: hsl(346, 92%, 64%);

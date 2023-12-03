@@ -173,17 +173,16 @@ div.app📁 {
         transition: all 240ms ease;
         color: hsl(210, 40%, 96%);
         border-radius: 0.5rem;
+        height: 3rem;
+        transform: scale(1);
 
-        &:first-child:hover {
-          background-color: hsla(220, 10%, 17%, 0.5);
+        & i {
+          color: hsl(346, 92%, 64%);
         }
 
-        &:last-child {
+        &:hover {
           background-color: hsla(220, 10%, 17%, 0.5);
-
-          &:hover {
-            background-color: hsl(225, 17%, 9%);
-          }
+          transform: scale(1.125);
         }
       }
     }
@@ -220,9 +219,11 @@ div.app📁 {
           @include gridIconBackground();
           transition: all 240ms ease;
           transform: scale(1);
+          filter: brightness(100%);
 
           &:hover {
             transform: scale(1.125);
+            filter: brightness(65%);
           }
         }
 
