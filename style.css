@@ -84,6 +84,7 @@ nav.nav📁 div.nav-split📁 div:first-child button.button📁.active📁 {
   background-color: hsl(225, 17%, 9%);
   border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
   color: hsl(210, 40%, 96%);
+  pointer-events: none;
 }
 nav.nav📁 div.nav-split📁 div:first-child a.button📁 {
   border: none;
@@ -103,11 +104,6 @@ nav.nav📁 div.nav-split📁 div:first-child a.button📁:hover {
   background-color: hsl(225, 17%, 9%);
   border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
   color: hsl(222, 5%, 62%);
-}
-nav.nav📁 div.nav-split📁 div:first-child a.button📁.active📁 {
-  background-color: hsl(225, 17%, 9%);
-  border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
-  color: hsl(210, 40%, 96%);
 }
 
 div.app📁 {
