@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html,
 body {
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
   font-family: "Karla", sans-serif;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
@@ -12,13 +12,13 @@ body * {
   box-sizing: border-box;
 }
 html ::-moz-selection, body ::-moz-selection {
-  color: hsl(346, 92%, 64%);
-  background-color: hsla(346, 92%, 64%, 0.1);
+  color: #84a0c6;
+  background-color: hsla(215, 37%, 65%, 0.2);
 }
 html ::selection,
 body ::selection {
-  color: hsl(346, 92%, 64%);
-  background-color: hsla(346, 92%, 64%, 0.1);
+  color: #84a0c6;
+  background-color: hsla(215, 37%, 65%, 0.2);
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -39,7 +39,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
 }
 
 div.holder📁 {
@@ -62,12 +62,12 @@ nav.nav📁 div.nav-split📁 {
 nav.nav📁 div.nav-split📁 div:first-child {
   display: flex;
   flex-basis: 2.5rem;
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
 }
 nav.nav📁 div.nav-split📁 div:first-child button.button📁 {
   border: none;
   outline: none;
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
   flex-basis: 6rem;
   box-shadow: -0.0625rem 0rem 0rem 0rem hsla(220, 10%, 17%, 0.5);
   border-bottom: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
@@ -83,13 +83,13 @@ nav.nav📁 div.nav-split📁 div:first-child button.button📁:hover {
 nav.nav📁 div.nav-split📁 div:first-child button.button📁.active📁 {
   background-color: hsl(225, 17%, 9%);
   border-bottom: solid 0.0625rem hsl(225, 17%, 9%);
-  color: hsl(210, 40%, 96%);
+  color: #cdd6dd;
   pointer-events: none;
 }
 nav.nav📁 div.nav-split📁 div:first-child a.button📁 {
   border: none;
   outline: none;
-  background-color: hsl(223, 20%, 7%);
+  background-color: #0c0d11;
   flex-basis: 6rem;
   box-shadow: -0.0625rem 0rem 0rem 0rem hsla(220, 10%, 17%, 0.5);
   border-bottom: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
@@ -107,7 +107,7 @@ nav.nav📁 div.nav-split📁 div:first-child a.button📁:hover {
 }
 
 div.app📁 {
-  background: radial-gradient(50% 50% at 100% 0%, hsla(346, 92%, 64%, 0.1) 0%, rgba(36, 19, 27, 0) 100%), radial-gradient(50% 50% at 0% 0%, hsla(346, 92%, 64%, 0.1) 0%, rgba(36, 19, 27, 0) 100%);
+  background: radial-gradient(50% 50% at 100% 0%, hsla(215, 37%, 65%, 0.2) 0%, rgba(36, 19, 27, 0) 100%), radial-gradient(50% 50% at 0% 0%, hsla(215, 37%, 65%, 0.2) 0%, rgba(36, 19, 27, 0) 100%);
   background-size: 100% 30rem;
   background-repeat: no-repeat;
 }
@@ -124,25 +124,25 @@ div.app📁 div.section📁 span.text-span📁 .little-rounded-card📁 {
   border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
   border-radius: 0.75rem;
   padding: 0 0.6rem;
-  color: hsl(346, 92%, 64%);
+  color: #84a0c6;
 }
 div.app📁 div.section📁 span.text-span📁 h1 {
-  color: hsl(210, 40%, 96%);
+  color: #cdd6dd;
   font-weight: 800;
   font-size: 3.75em;
   transition: all 240ms ease;
 }
 div.app📁 div.section📁 span.text-span📁 h1 .highlight📁 {
-  color: hsl(346, 92%, 64%);
+  color: #84a0c6;
 }
 div.app📁 div.section📁 span.text-span📁 h2 {
-  color: hsl(210, 40%, 96%);
+  color: #cdd6dd;
   font-weight: 600;
   font-size: 2.25em;
   transition: all 240ms ease;
 }
 div.app📁 div.section📁 span.text-span📁 p {
-  color: hsla(204, 100%, 90%, 0.8);
+  color: #5e676e;
 }
 div.app📁 div.section📁 span.text-span📁 button.button📁 {
   outline: none;
@@ -150,13 +150,13 @@ div.app📁 div.section📁 span.text-span📁 button.button📁 {
   border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
   padding: 0 1.5rem;
   transition: all 240ms ease;
-  color: hsl(210, 40%, 96%);
+  color: #cdd6dd;
   border-radius: 0.5rem;
   height: 3rem;
   transform: scale(1);
 }
 div.app📁 div.section📁 span.text-span📁 button.button📁 i {
-  color: hsl(346, 92%, 64%);
+  color: #84a0c6;
 }
 div.app📁 div.section📁 span.text-span📁 button.button📁:hover {
   background-color: hsla(220, 10%, 17%, 0.5);
@@ -189,22 +189,22 @@ div.app📁 div.section📁 div.grid-layout📁 div.grid📁:hover {
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 div.icon-background📁 {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: hsl(346, 92%, 64%);
+  background-color: #84a0c6;
   border-radius: 0.75rem;
   display: grid;
   place-content: center;
-  color: hsl(210, 40%, 96%);
+  color: #383e42;
   font-size: 1.5em;
   text-decoration: none;
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 a.icon-background📁 {
   height: 2.5rem;
   width: 2.5rem;
-  background-color: hsl(346, 92%, 64%);
+  background-color: #84a0c6;
   border-radius: 0.75rem;
   display: grid;
   place-content: center;
-  color: hsl(210, 40%, 96%);
+  color: #383e42;
   font-size: 1.5em;
   text-decoration: none;
   transition: all 240ms ease;
@@ -216,17 +216,17 @@ div.app📁 div.section📁 div.grid-layout📁 div.grid📁 a.icon-background�
   filter: brightness(65%);
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 span.title📁 {
-  color: hsl(346, 92%, 64%);
+  color: #84a0c6;
   margin-top: 1rem;
   font-size: 0.875em;
   line-height: 1.25rem;
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 span.sub-title📁 {
-  color: hsl(210, 40%, 96%);
+  color: #cdd6dd;
   font-size: 1.25rem;
 }
 div.app📁 div.section📁 div.grid-layout📁 div.grid📁 span.description📁 {
-  color: hsl(213, 27%, 84%);
+  color: #383e42;
   font-size: 0.875em;
   line-height: 1.25rem;
 }
