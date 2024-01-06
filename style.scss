@@ -129,6 +129,19 @@ div.app📁 {
     transition: all 240ms ease;
     text-align: center;
 
+    & .iframe📁 {
+      flex-basis: 45rem;
+      background-color: hsl(225, 17%, 9%);
+      border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+      padding: 1.5rem;
+      transform: scale(1);
+      border-radius: 1rem;
+
+      &:hover {
+        transform: scale(1.125);
+      }
+    }
+
     & span.text-span📁 {
       & .little-rounded-card📁 {
         background-color: hsl(225, 17%, 9%);
