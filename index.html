@@ -223,8 +223,37 @@
           </div>
         </div>
         <div class="section📁" id="games📁" style="display: none">
-          <iframe class="iframe📁" src="https://sploop.io" frameborder="0"></iframe>
-          <iframe class="iframe📁" src="https://moomoo.io" frameborder="0"></iframe>
+          <span class="text-span📁">
+            <h1>Test your scripts</h1>
+            <p>Run scripts using our new iframe system.</p>
+          </span>
+
+          <div style="display: flex; flex-direction: column">
+            <span class="text-span📁">
+              <h2>MOOMOO.io</h2>
+              <p>Moo Moo.</p>
+            </span>
+            <div class="iframe📁">
+              <span style="display: flex; justify-content: space-between; align-items: center">
+                <h2 style="color: #cdd6dd">Reload</h2>
+                <i onclick="document.getElementById('MooMooIO-iframe').src = document.getElementById('MooMooIO-iframe').src" class="ri-loop-right-fill" style="height: 2.5rem; width: 2.5rem; background-color: #84a0c6; border-radius: 0.75rem; display: grid; place-content: center; color: #383e42; font-size: 1.5em; text-decoration: none; cursor: pointer"></i>
+              </span>
+              <iframe src="https://moomoo.io" frameborder="0" id="MooMooIO-iframe" style="flex-basis: 45rem"></iframe>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <span class="text-span📁">
+              <h2>SPLOOP.io</h2>
+              <p>Fast paced combat game.</p>
+            </span>
+            <div class="iframe📁">
+              <span style="display: flex; justify-content: space-between; align-items: center">
+                <h2 style="color: #cdd6dd">Reload</h2>
+                <i onclick="document.getElementById('SPLOOPIO-iframe').src = document.getElementById('SPLOOPIO-iframe').src" class="ri-loop-right-fill" style="height: 2.5rem; width: 2.5rem; background-color: #84a0c6; border-radius: 0.75rem; display: grid; place-content: center; color: #383e42; font-size: 1.5em; text-decoration: none; cursor: pointer"></i>
+              </span>
+              <iframe src="https://sploop.io" frameborder="0" id="SPLOOPIO-iframe" style="flex-basis: 45rem"></iframe>
+            </div>
+          </div>
         </div>
         <div class="section📁" id="updates📁" style="display: none">
           <div>
