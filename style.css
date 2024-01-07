@@ -119,6 +119,13 @@ div.app📁 div.section📁 {
   transition: all 240ms ease;
   text-align: center;
 }
+div.app📁 div.section📁 .iframe📁 {
+  flex-basis: 45rem;
+  background-color: hsl(225, 17%, 9%);
+  border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
 div.app📁 div.section📁 span.text-span📁 .little-rounded-card📁 {
   background-color: hsl(225, 17%, 9%);
   border: solid 0.0625rem hsla(220, 10%, 17%, 0.5);
