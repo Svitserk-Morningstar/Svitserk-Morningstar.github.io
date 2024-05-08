@@ -65,6 +65,7 @@ nav.nav📁 div.nav-split📁 div:first-child {
   background-color: hsl(228, 17%, 6%);
 }
 nav.nav📁 div.nav-split📁 div:first-child button.button📁 {
+  position: relative;
   border: none;
   outline: none;
   background-color: hsl(228, 17%, 6%);
@@ -87,6 +88,7 @@ nav.nav📁 div.nav-split📁 div:first-child button.button📁.active📁 {
   pointer-events: none;
 }
 nav.nav📁 div.nav-split📁 div:first-child a.button📁 {
+  position: relative;
   border: none;
   outline: none;
   background-color: hsl(228, 17%, 6%);
